@@ -42,8 +42,12 @@ def main():
     tr = [sys.executable, str(ROOT / "tools/recomp/x86recomp.py")]
     subprocess.run(tr + ["--exe", str(exe), "--load-seg", "0x824", "--functions", str(ROOT / "analysis/function-map.json"),
                          "--out", str(a.out), "--prefix", "mtv", "--chunks", str(CHUNKS), "--ds", "0x39d4",
-                         # Turbo C's divide-error handler, installed by the startup code with INT 21h AH=25h (CS:0125)
-                         "--entries", "0:125",
+                         # Turbo C's divide-error handler, installed by the startup code with INT 21h AH=25h (CS:0125),
+                         # and the exit handlers the program registers (a table of far pointers at DS:A6A2 at run
+                         # time), reached only through those pointers when it ends (End on the player select, THE END,
+                         # a key): the keyboard stub 3859:0001 (a bare retf), the sound shutdown 35F8:0376 and the video
+                         # mode restore 3741:0000; the fourth, 365D:000D, is found by the analysis already
+                         "--entries", "0:125,35f8:376,3741:0,3859:1",
                          # pixel provenance for the upscaled renderer: the image decoder (FUN_47b4_04ac) names the
                          # slot, its pixel store (FUN_47b4_016d) the frame, x and y
                          "--hooks", "37fec", "--tag-stores", "37c36"], check=True)

@@ -125,6 +125,12 @@ the app shows.
 `~/Library/Application Support/MadTV`, on Windows in `%APPDATA%\MadTV`. They use
 the game's own format, inside its copy of `SOURCE1.RSC`.
 
+**How do I quit?** As in the original: go to the boss's office, use the arrows
+next to your reply until it says "I've had enough. I quit.", click it, then click
+*End* on the player screen and once more on *THE END*. Or simply close the window
+(Cmd+Q, Alt+F4). Either way, save first in the safe in your office: the game
+does not save by itself.
+
 **Can I switch back to the original look?** Yes, press **Pause** while playing to
 switch between the upscaled pictures and the original pixels.
 

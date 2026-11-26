@@ -1,0 +1,152 @@
+{
+"note": "New game, leave the boss, info board, back to the boss's office, reply 'I've had enough. I quit.', fired, End on the player select, THE END, a key: the program returns to DOS.",
+"events": [
+{
+"frame": 100,
+"keys": [
+4709
+]
+},
+{
+"frame": 400,
+"keys": [
+7181
+]
+},
+{
+"frame": 700,
+"keys": [
+14624
+]
+},
+{
+"frame": 900,
+"mouse": [
+63,
+100
+]
+},
+{
+"frame": 920,
+"buttons": 1
+},
+{
+"frame": 925,
+"buttons": 0
+},
+{
+"frame": 1900,
+"mouse": [
+160,
+60
+]
+},
+{
+"frame": 1920,
+"buttons": 1
+},
+{
+"frame": 1925,
+"buttons": 0
+},
+{
+"frame": 2100,
+"buttons": 2
+},
+{
+"frame": 2105,
+"buttons": 0
+},
+{
+"frame": 2600,
+"buttons": 2
+},
+{
+"frame": 2605,
+"buttons": 0
+},
+{
+"frame": 2700,
+"mouse": [
+150,
+5
+]
+},
+{
+"frame": 2720,
+"buttons": 1
+},
+{
+"frame": 2725,
+"buttons": 0
+},
+{
+"frame": 4800,
+"mouse": [
+190,
+73
+]
+},
+{
+"frame": 4820,
+"buttons": 1
+},
+{
+"frame": 4825,
+"buttons": 0
+},
+{
+"frame": 7950,
+"mouse": [
+230,
+92
+]
+},
+{
+"frame": 8000,
+"buttons": 1
+},
+{
+"frame": 8005,
+"buttons": 0
+},
+{
+"frame": 8150,
+"buttons": 1
+},
+{
+"frame": 8155,
+"buttons": 0
+},
+{
+"frame": 9300,
+"mouse": [
+255,
+101
+]
+},
+{
+"frame": 9320,
+"buttons": 1
+},
+{
+"frame": 9325,
+"buttons": 0
+},
+{
+"frame": 9900,
+"buttons": 1
+},
+{
+"frame": 9905,
+"buttons": 0
+},
+{
+"frame": 10100,
+"keys": [
+7181
+]
+}
+],
+"exits_by": 10400
+}

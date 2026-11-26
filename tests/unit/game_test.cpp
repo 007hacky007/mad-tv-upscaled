@@ -490,3 +490,28 @@ TEST_CASE("saving_leaves_pristine_files_untouched") {
     CHECK(sha256_file(user / "SOURCE1.RSC").value() != before["SOURCE1.RSC"]);
 }
 }
+TEST_SUITE("corpus.game") {
+// Quitting from inside the game: the boss fires you, End on the player select, THE END, a key. The program returns
+// to DOS through its exit handlers (one of them, at image offset 0x362F6, is reached only through a pointer).
+TEST_CASE("quitting_through_the_boss_exits_cleanly") {
+    const auto fx = fixture("quit-via-boss.json");
+    const auto& events = fx["events"];
+    game::Game g({test::corpus_dir(), temp_user_dir("quit"), game::Language::English, &rt::static_logic()});
+    rt::HostInput in;
+    size_t next = 0;
+    int f = 0;
+    bool running = true;
+    for (; running && f < fx["exits_by"].get<int>(); ++f) {
+        in.keys.clear();
+        while (next < events.size() && events[next]["frame"].get<int>() <= f) {
+            const auto& e = events[next++];
+            if (e.contains("keys")) for (const auto& k : e["keys"]) in.keys.push_back(k.get<uint16_t>());
+            if (e.contains("mouse")) { in.mouse_x = e["mouse"][0]; in.mouse_y = e["mouse"][1]; }
+            if (e.contains("buttons")) in.buttons = e["buttons"];
+        }
+        running = g.tick(in);
+    }
+    CHECK_FALSE(running);
+    CHECK_MESSAGE(!g.failure(), (g.failure() ? *g.failure() : std::string()));
+}
+}
