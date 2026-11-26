@@ -26,6 +26,8 @@ python3 packaging/package.py --platform macos --build build/macos-release --out 
 python3 packaging/package.py --platform windows --build build/windows-release --out dist
 ```
 
+`--dmg` also makes `MadTV-macOS.dmg` (the app, an Applications shortcut and a background that explains the first open) with dmgbuild, installed once with `python3 -m venv tools/cache/dmgenv && tools/cache/dmgenv/bin/pip install dmgbuild==2.0.0`. The background is `packaging/macos/dmg/background.html`, rendered to PNG by `render_background.sh` (headless Chrome). The app icon is original pixel art drawn by `tools/art/app_icon.py` into `packaging/icons/`.
+
 `package.py` encrypts the library with `mtv-tool encrypt-logic` (key from `mad-tv/MTV.EXE` and `mad-tv/SOURCE1.RSC`), and adds the Real-ESRGAN runner and model from `tools/upscalers/` (the Windows runner is the pinned release zip in `dependencies.lock.json`, unpacked to `tools/upscalers/realesrgan-20220424-windows`). The release check (`packaging/tests/package_test.py`, ctest `packaging.contents`; for Windows run it with `MTV_BUILD=build/windows-release MTV_PLATFORM=windows`) fails if a package holds an original file, a picture, the plaintext library, translated function names or any run of 48 bytes shared with the original files.
 
 `MTV_USER_DIR` replaces the per-user folder (tests); `MTV_RUNNER` points the app at another upscaler. `mtv-tool build-pack --data mad-tv --out <dir>` builds the upscale pack the way the app does.

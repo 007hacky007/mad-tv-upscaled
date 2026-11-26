@@ -1,0 +1,129 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Mad TV disk image background</title>
+<style>
+html,body{margin:0;padding:0;background:#f7efdc}
+.cv{position:relative;overflow:hidden;font:13px -apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif;color:#1d1d1f;width:760px;height:600px;background:linear-gradient(#fffdf6,#f7efdc)}
+.abs{position:absolute}
+.hand{font-family:"Bradley Hand","Chalkboard SE","Marker Felt",cursive;font-weight:700;color:#d33a2c;line-height:1.1;white-space:nowrap}
+.hand small{display:block;font-size:15px;color:#6b6b70;font-weight:600;margin-top:2px}
+.slot{width:110px;height:110px;visibility:hidden}
+.photo{position:absolute;background:#fff;padding:7px;border-radius:2px;box-shadow:0 10px 22px rgba(0,0,0,.16),0 2px 5px rgba(0,0,0,.12)}
+.pic{filter:grayscale(1) contrast(.85) brightness(1.04)}
+.ex{position:absolute;font-size:10px;font-weight:600;letter-spacing:.08em;color:#8e8e93;white-space:nowrap}
+.alert{width:222px;background:#f2f2f2;border-radius:3px;padding:12px 14px 10px;text-align:center;font-size:10.5px;box-sizing:border-box}
+.alert .ai{width:44px;height:44px;margin:0 auto 6px;position:relative}
+.alert .ai img{display:block;width:44px;height:44px}
+.alert .ai:after{content:"!";position:absolute;right:-6px;bottom:-6px;width:20px;height:20px;border-radius:50%;background:#ffcc00;color:#000;font-weight:900;font-size:13px;line-height:20px;text-align:center}
+.alert h4{margin:0 0 6px;font-size:12.5px}
+.alert p{margin:0 -7px 10px;color:#3c3c43;line-height:1.35}
+.alert .bt{padding:5px;border-radius:6px;background:#e3e3e8;font-weight:500;margin-top:6px}
+.alert .bt.pri{background:#0a7aff;color:#fff}
+.set{background:#fff;border-radius:3px;overflow:hidden;display:flex}
+.sb{width:172px;background:#e9e9ee;padding:10px 8px 8px;font-size:11px;position:relative;box-sizing:border-box;flex:none}
+.sb .srch{background:#dcdce1;border-radius:6px;padding:3px 7px;color:#8e8e93;margin-bottom:7px}
+.sb .it{display:flex;align-items:center;gap:6px;padding:3px 5px;border-radius:5px;margin-bottom:1px;white-space:nowrap;overflow:hidden}
+.sb .it s{width:15px;height:15px;border-radius:4px;display:inline-block;text-decoration:none;flex:none}
+.sb .sel{background:#0a7aff;color:#fff}
+.main{flex:1;padding:10px 10px;font-size:10.5px;background:#f5f5f7}
+.main .h{font-weight:700;font-size:13px;text-align:center;margin:0 0 8px}
+.main .gl{font-weight:600;color:#3c3c43;margin:0 0 4px 4px}
+.grp{background:#fff;border-radius:8px;border:1px solid #e0e0e5}
+.grp .r{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border-bottom:1px solid #ececf0;gap:8px;white-space:nowrap}
+.grp .r:last-child{border-bottom:none}
+.pop{border:1px solid #d1d1d6;border-radius:5px;padding:2px 8px;background:#fff}
+.oa{border:1px solid #c7c7cc;border-radius:5px;padding:3px 10px;background:#fff;font-weight:500;box-shadow:0 1px 1px rgba(0,0,0,.08)}
+.fade{color:#aeaeb2}
+.tip{left:0;right:0;bottom:12px;text-align:center;font-size:11px;color:#8e8e93}
+.cmd{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;background:#e5e5ea;padding:1px 4px;border-radius:4px}
+svg.ink{position:absolute;left:0;top:0;pointer-events:none}
+svg.ink path{fill:none;stroke:#d33a2c;stroke-linecap:round;stroke-linejoin:round}
+</style></head>
+<body>
+<div class="cv" id="cv">
+
+    <!-- Finder draws the icons here (settings.py: MadTV.app at 100,100, Applications at 300,100). -->
+    <div class="abs slot" id="app" style="left:45px;top:45px"></div>
+    <div class="abs slot" id="apps" style="left:245px;top:45px"></div>
+    <div class="abs hand" id="n1" style="left:96px;top:166px;font-size:25px">1. Drag Mad TV to Applications</div>
+
+    <div class="ex" style="left:512px;top:9px">EXAMPLE - YOU WILL SEE THIS</div>
+    <div class="photo" style="left:506px;top:30px;transform:rotate(2deg)"><div class="alert pic">
+      <div class="ai"><img src="../../icons/app-icon.png" alt="Mad TV icon" style="image-rendering:pixelated"></div>
+      <h4>&ldquo;MadTV&rdquo; Not Opened</h4>
+      <p>Apple could not verify &ldquo;MadTV&rdquo; is free of malware that may harm your Mac or compromise your privacy.</p>
+      <div class="bt pri" id="done">Done</div><div class="bt">Move to Trash</div>
+    </div></div>
+    <div class="abs hand" id="n2" style="left:330px;top:214px;font-size:21px">2. Open it there,
+      <div>then click Done</div></div>
+
+    <div class="ex" style="left:24px;top:262px">EXAMPLE - YOU WILL SEE THIS</div>
+    <div class="photo" style="left:14px;top:280px;transform:rotate(-1.5deg)"><div class="set pic" style="width:556px;height:184px">
+      <div class="sb">
+        <div class="srch">&#9906; Search</div>
+        <div class="it fade"><s style="background:#0a7aff"></s>Wi-Fi</div>
+        <div class="it fade"><s style="background:#0a7aff"></s>Bluetooth</div>
+        <div class="it fade"><s style="background:#8e8e93"></s>General</div>
+        <div class="it fade"><s style="background:#0a7aff"></s>Accessibility</div>
+        <div class="it sel" id="privacy"><svg width="15" height="15" viewBox="0 0 20 20" style="flex:none;border-radius:4px;box-shadow:0 0 0 1px rgba(255,255,255,.55)"><defs><linearGradient id="psg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4aa3ff"/><stop offset="1" stop-color="#1a6ff0"/></linearGradient></defs><rect width="20" height="20" rx="4.5" fill="url(#psg)"/><g fill="#fff"><rect x="6.3" y="4.6" width="2" height="7" rx="1"/><rect x="8.7" y="3.4" width="2" height="8" rx="1"/><rect x="11.1" y="3.9" width="2" height="7.5" rx="1"/><rect x="13.4" y="5.6" width="1.9" height="6" rx=".95"/><path d="M6.3 9.5 H15.3 V12.6 C15.3 15.2 13.6 16.8 11.1 16.8 H10.2 C8.7 16.8 7.7 16.2 6.8 15 L4.4 11.7 C3.9 11 4.6 10.1 5.4 10.5 L6.3 11.2 Z"/></g></svg>Privacy &amp; Security</div>
+        <div class="it fade"><s style="background:#8e8e93"></s>Touch ID &amp; Password</div>
+      </div>
+      <div class="main">
+        <div class="h">Privacy &amp; Security</div>
+        <div class="gl">Security</div>
+        <div class="grp">
+          <div class="r"><span>Allow applications from</span><span class="pop">App Store &amp; Known Developers &#8964;</span></div>
+          <div class="r"><span>&ldquo;MadTV&rdquo; was blocked to protect your Mac.</span><span class="oa" id="oa">Open Anyway</span></div>
+        </div>
+        <div class="gl" style="margin-top:8px">Others</div>
+        <div class="grp fade"><div class="r"><span>Accessories</span><span>Ask for New &#8964;</span></div></div>
+      </div>
+    </div></div>
+    <div class="abs hand" style="left:592px;top:288px;font-size:19px">3. Open
+      <div>System Settings</div>
+      <small>Privacy &amp; Security,<br>scroll down</small></div>
+    <div class="abs hand" id="n4" style="left:592px;top:398px;font-size:19px">4. Open Anyway</div>
+
+    <svg class="ink" id="ink" width="760" height="600" viewBox="0 0 760 600">
+      <defs><filter id="pencil"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter></defs>
+      <g id="strokes" filter="url(#pencil)"></g>
+    </svg>
+
+    <div class="abs tip" style="bottom:96px;color:#6e6e73">Why? Mad TV Upscaled is free and open source, but not signed with Apple, so macOS asks once.</div>
+    <div class="abs tip" style="bottom:78px;color:#6e6e73">On macOS 14 and older: right-click MadTV in Applications and choose Open.</div>
+    <div class="abs tip" style="bottom:54px">Friends with Terminal? After copying, run this and open it again:</div>
+    <div class="abs tip" style="bottom:34px"><span class="cmd">xattr -dr com.apple.quarantine /Applications/MadTV.app</span></div>
+    <div class="abs tip" style="bottom:10px;color:#6e6e73">You need your own copy of Mad TV: the first start asks for the folder with the original files.</div>
+</div>
+<script>
+(function(){
+  const cv=document.getElementById('cv'),g=document.getElementById('strokes');
+  const box=id=>{const a=document.getElementById(id).getBoundingClientRect(),c=cv.getBoundingClientRect();return{x:a.left-c.left,y:a.top-c.top,w:a.width,h:a.height}};
+  const add=(d,w,o)=>{const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d',d);p.setAttribute('stroke-width',w);if(o)p.setAttribute('opacity',o);g.appendChild(p)};
+  function loop(b,px,py){
+    const cx=b.x+b.w/2,cy=b.y+b.h/2,rx=b.w/2+px,ry=b.h/2+py;
+    const pt=(t,k)=>[cx+Math.cos(t)*rx*k,cy+Math.sin(t)*ry*k];
+    let d='',n=72;
+    for(let i=0;i<=n+12;i++){const t=-2.2+i*2*Math.PI/n,k=1+0.035*Math.sin(i*0.31+1)+(i>n?0.06*(i-n)/12:0);const[x,y]=pt(t,k);d+=(i?'L':'M')+x.toFixed(1)+' '+y.toFixed(1)}
+    add(d,2.8);
+  }
+  function arrow(x1,y1,x2,y2,bend){
+    const mx=(x1+x2)/2+bend[0],my=(y1+y2)/2+bend[1];
+    add(`M${x1} ${y1} Q${mx} ${my} ${x2} ${y2}`,3);
+    const a=Math.atan2(y2-my,x2-mx),l=13;
+    add(`M${x2-l*Math.cos(a-0.5)} ${y2-l*Math.sin(a-0.5)} L${x2} ${y2} L${x2-l*Math.cos(a+0.5)} ${y2-l*Math.sin(a+0.5)}`,3);
+  }
+  function draw(){
+    g.innerHTML='';
+    const ap=box('app'),as=box('apps'),dn=box('done'),n2=box('n2'),pr=box('privacy'),oa=box('oa'),n4=box('n4');
+    loop(ap,0,-6);
+    arrow(ap.x+ap.w+6,ap.y+ap.h/2-8,as.x-6,as.y+as.h/2-8,[0,-30]);
+    loop(dn,10,8);
+    arrow(n2.x+n2.w+6,n2.y+14,dn.x-12,dn.y+dn.h/2,[0,-14]);
+    loop(pr,8,7);
+    loop(oa,12,9);
+    arrow(n4.x-8,n4.y+16,oa.x+oa.w+16,oa.y+oa.h/2+2,[0,6]);
+  }
+  (document.fonts?document.fonts.ready:Promise.resolve()).then(draw);
+})();
+</script>
+</body></html>

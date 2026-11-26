@@ -87,6 +87,7 @@ def macos(build, out, data, tool):
         subprocess.run(["install_name_tool", "-delete_rpath", r, str(exe)], check=True)
     subprocess.run(["install_name_tool", "-add_rpath", "@executable_path/../Frameworks", str(exe)], check=True)
     res = app / "Contents/Resources"
+    shutil.copy2(ROOT / "packaging/icons/app-icon.icns", res / "app-icon.icns")
     (res / "README.txt").write_text(README.format(start="open MadTV.app", first_open=FIRST_OPEN["macos"]))
     notices(res, {**UPSCALER_LICENSES, **MACOS_UPSCALER_LICENSES})
     upscaler(res, ROOT / "tools/upscalers/realesrgan-20220424", ["realesrgan-ncnn-vulkan"])
@@ -100,6 +101,18 @@ def macos(build, out, data, tool):
     subprocess.run(["codesign", "--force", "--sign", "-", "--timestamp=none", str(app / "Contents/Frameworks/libSDL3.0.dylib")], check=True, capture_output=True)
     subprocess.run(["codesign", "--force", "--sign", "-", "--timestamp=none", str(app)], check=True, capture_output=True)
     return app
+
+
+def dmg(app, out):
+    """MadTV-macOS.dmg: the app, an Applications shortcut and a background that explains the first open."""
+    python = ROOT / "tools/cache/dmgenv/bin/python"
+    target = out / "MadTV-macOS.dmg"
+    target.unlink(missing_ok=True)
+    subprocess.run([str(python), "-m", "dmgbuild", "-s", str(ROOT / "packaging/macos/dmg/settings.py"),
+                    "-D", f"app={app}", "-D", f"assets={ROOT / 'packaging/macos/dmg'}",
+                    "-D", f"icon={ROOT / 'packaging/icons/app-icon.icns'}", "Mad TV Upscaled", str(target)],
+                   check=True, capture_output=True)
+    return target
 
 
 def windows(build, out, data, tool):
@@ -123,9 +136,13 @@ def main():
     p.add_argument("--out", type=Path, required=True)
     p.add_argument("--data", type=Path, default=ROOT / "mad-tv", help="the original files (for the logic key)")
     p.add_argument("--tool", type=Path, default=ROOT / "build/macos-release/mtv-tool", help="an mtv-tool that runs on this host")
+    p.add_argument("--dmg", action="store_true", help="macOS: also make MadTV-macOS.dmg (needs dmgbuild in tools/cache/dmgenv)")
     a = p.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
-    print((macos if a.platform == "macos" else windows)(a.build, a.out, a.data, a.tool))
+    result = (macos if a.platform == "macos" else windows)(a.build, a.out, a.data, a.tool)
+    print(result)
+    if a.dmg and a.platform == "macos":
+        print(dmg(result, a.out))
 
 
 if __name__ == "__main__":

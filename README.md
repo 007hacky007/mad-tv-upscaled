@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="packaging/icons/app-icon.png" width="96" alt="Mad TV Upscaled icon">
+</p>
+
 <h1 align="center">Mad TV Upscaled</h1>
 
 <p align="center">
@@ -62,14 +66,16 @@ DOSBox needed:
 
 1. **Download** the app for your computer from the
    [latest release](https://github.com/007hacky007/mad-tv-upscaled/releases/latest):
-   - Mac: `MadTV-macOS.zip`
+   - Mac: `MadTV-macOS.dmg`
    - Windows: `MadTV-Windows.zip`
-2. **Unpack and open it.**
-   - **Mac:** double-click *MadTV.app*. It is not signed by Apple, so the first
-     time macOS refuses to open it: click *Done*, open *System Settings > Privacy
-     & Security*, scroll down and click *Open Anyway*.
-   - **Windows:** run *mtv.exe* in the *MadTV-win64* folder. If SmartScreen says
-     "Windows protected your PC", click *More info* and then *Run anyway*.
+2. **Install and open it.**
+   - **Mac:** open the disk image and drag *MadTV* to *Applications*, then open
+     it from there. It is not signed by Apple, so the first time macOS refuses to
+     open it. The disk image window shows what to do: click *Done*, open *System
+     Settings > Privacy & Security*, scroll down and click *Open Anyway*.
+   - **Windows:** unpack the zip and run *mtv.exe* in the *MadTV-win64* folder. If
+     SmartScreen says "Windows protected your PC", click *More info* and then
+     *Run anyway*.
 3. **Choose the folder with your game files.** The app checks them against the
    original release and copies them into your user folder. Your originals stay
    untouched.
@@ -139,7 +145,8 @@ und kopiert sie, entsperrt damit das Spiel und skaliert alle Bilder auf deinem
 Rechner hoch. **F12** öffnet die Optionen (Sprache Deutsch/Englisch, Bildformat,
 Vollbild), **F11** schaltet auf Vollbild. Auf dem Mac öffnest du die App beim
 ersten Mal über *Systemeinstellungen > Datenschutz & Sicherheit > Dennoch öffnen*,
-unter Windows über *Weitere Informationen > Trotzdem ausführen*.
+unter Windows über *Weitere Informationen > Trotzdem ausführen*. Auf dem Mac
+ziehst du MadTV aus dem Disk-Image in den Ordner *Programme*.
 
 ## For developers
 

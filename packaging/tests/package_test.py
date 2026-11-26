@@ -25,6 +25,7 @@ SYMBOL = re.compile(rb"mtv_[0-9a-f]{5}[^0-9a-f]|pal9[589]_[0-9a-f]{5}")
 ALLOWED = [re.compile(p) for p in (
     r"Contents/Info\.plist", r"Contents/MacOS/mtv", r"Contents/Frameworks/libSDL3\.0\.dylib", r"Contents/_CodeSignature/CodeResources",
     r"(Contents/Resources/)?(LICENSE|README\.txt|THIRD_PARTY_NOTICES\.md|logic\.bin)",
+    r"Contents/Resources/app-icon\.icns",
     r"(Contents/Resources/)?licenses/[A-Za-z0-9.+-]+\.txt",
     r"(Contents/Resources/)?upscaler/(realesrgan-ncnn-vulkan(\.exe)?|vcomp140\.dll)",
     r"(Contents/Resources/)?upscaler/models/realesr-animevideov3-x3\.(bin|param)",
