@@ -118,3 +118,5 @@ if(TARGET mtv-logic)
  add_test(NAME platform.logic_build_id COMMAND ${CMAKE_COMMAND} -E env MTV_BUILD=${CMAKE_BINARY_DIR}
   ${Python3_EXECUTABLE} -m unittest discover -s ${CMAKE_SOURCE_DIR}/tests/unit -p logic_build_id_test.py)
 endif()
+target_sources(mtv-tests PRIVATE unit/shortcuts_test.cpp)
+add_test(NAME platform.shortcuts COMMAND mtv-tests --test-suite=platform.shortcuts)

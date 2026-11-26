@@ -58,7 +58,7 @@ add_library(mtv-crypto STATIC src/platform/logic_crypto.cpp tools/vendor/monocyp
 target_include_directories(mtv-crypto PUBLIC src PRIVATE tools/vendor/monocypher)
 target_link_libraries(mtv-crypto PUBLIC mtv-core)
 set_source_files_properties(tools/vendor/monocypher/monocypher.c PROPERTIES COMPILE_OPTIONS "-O2")
-add_library(mtv-platform STATIC src/platform/input.cpp src/platform/settings.cpp src/platform/import.cpp src/platform/logic_loader.cpp src/platform/install.cpp src/platform/pack_job.cpp src/ui/options.cpp)
+add_library(mtv-platform STATIC src/platform/input.cpp src/platform/settings.cpp src/platform/import.cpp src/platform/logic_loader.cpp src/platform/install.cpp src/platform/pack_job.cpp src/platform/shortcuts.cpp src/ui/options.cpp)
 target_link_libraries(mtv-platform PUBLIC mtv-core mtv-crypto mtv-art SDL3::SDL3)
 target_link_libraries(mtv PRIVATE mtv-platform)
 target_link_libraries(mtv-tool PRIVATE mtv-platform)

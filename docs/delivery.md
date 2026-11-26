@@ -5,7 +5,7 @@ Native port of Mad TV (Rainbow Arts, 1991) for macOS arm64 and Windows x64, with
 ## What it is
 
 - The game logic is the original program: `MTV.EXE` and the Palladix AdLib driver are translated instruction by instruction into C++ at build time (`tools/recomp`) and run on a small model of the PC and DOS (`src/rt`). The intro (`INTRO.EXE` with `MCV.BIN`) is a hand port.
-- Graphics: the game's own 320x200 picture, drawn 6x. Each pixel that came from an image is drawn from the upscaled image (nearest x2, then Real-ESRGAN AnimeVideo v3 x3, chosen in the art pilot); fills and lines drawn by the code stay flat. Pause switches to plain 6x pixels (development).
+- Graphics: the game's own 320x200 picture, drawn 6x. Each pixel that came from an image is drawn from the upscaled image (nearest x2, then Real-ESRGAN AnimeVideo v3 x3, chosen in the art pilot); fills and lines drawn by the code stay flat. F12 > Pictures (or Pause) switches to plain 6x pixels.
 - Sound: the driver's AdLib register writes played by ymfm (YM3812).
 - Saves: the game's own save slots, kept in a copy of `SOURCE1.RSC` in the user folder.
 - Release form: the translated logic builds as a library (`mtv-logic`) that the package carries only encrypted (`logic.bin`, XChaCha20-Poly1305, key = BLAKE2b over the original `MTV.EXE` and `SOURCE1.RSC`). The first start unlocks it into the user folder and builds the upscaled art with the bundled Real-ESRGAN runner. Without the original files a package does nothing.
@@ -23,7 +23,7 @@ The build needs the original files in `mad-tv/` (`MTV_GAME_DIR`): the translated
 
 First start: the program asks for the folder with the six original files, checks them against the known release (SHA-256) and copies them into the user folder (`~/Library/Application Support/MadTV`, `%APPDATA%\MadTV`); `mtv --import <folder>` does the same without a window. It then unlocks the logic into `logic/<build id>/` (again after an update, from the copies in the user folder) and builds the upscaled art with a progress screen; Esc plays with plain 6x pixels, F12 offers the build later. A pack found next to the original files is still taken over by the import.
 
-Keys: F12 options (language, aspect 4:3 or square pixels, fullscreen, building the upscaled pictures), F11 or Alt+Enter fullscreen, Pause plain pixels (development). F1-F10 stay the game's own hotkeys.
+Keys: F12 options (language, aspect 4:3 or square pixels, fullscreen, upscaled or original pictures, or building the upscaled pictures when they are missing), F11 or Alt+Enter fullscreen, Pause upscaled or original pictures. Each also has a Ctrl (or Cmd) letter: Ctrl+O or Ctrl+, options, Ctrl+F fullscreen, Ctrl+P pictures; plain letters stay with the game, which takes typed save names. F1-F10 stay the game's own hotkeys.
 
 Signing is ad-hoc only (no Apple ID, no notarization, no Authenticode); the README explains the first-open steps.
 

@@ -13,6 +13,10 @@ OptionChange OptionsMenu::activate(OptionItem item, Settings& s) {
     case OptionItem::Fullscreen:
         s.fullscreen = !s.fullscreen;
         return OptionChange::Fullscreen;
+    case OptionItem::Pictures:
+        s.graphics_dev = s.graphics_dev == GraphicsMode::Upscaled ? GraphicsMode::Nearest : GraphicsMode::Upscaled;
+        open_ = false;
+        return OptionChange::Pictures;
     case OptionItem::BuildPack:
         open_ = false;
         return OptionChange::BuildPack;
@@ -24,7 +28,7 @@ OptionChange OptionsMenu::activate(OptionItem item, Settings& s) {
 }
 void OptionsMenu::set_pack_available(bool available) {
     items_ = {OptionItem::Language, OptionItem::Aspect, OptionItem::Fullscreen};
-    if (!available) items_.push_back(OptionItem::BuildPack);
+    items_.push_back(available ? OptionItem::Pictures : OptionItem::BuildPack);
     items_.push_back(OptionItem::Close);
     selected_ = std::min(selected_, int(items_.size()) - 1);
 }
@@ -38,6 +42,9 @@ std::string OptionsMenu::label(OptionItem item, const Settings& s) const {
         return std::string(de ? "Bildformat: " : "Aspect: ") + v;
     }
     case OptionItem::Fullscreen: return std::string(de ? "Vollbild: " : "Fullscreen: ") + (s.fullscreen ? (de ? "an" : "on") : (de ? "aus" : "off"));
+    case OptionItem::Pictures:
+        if (s.graphics_dev == GraphicsMode::Upscaled) return de ? "Bilder: hochskaliert" : "Pictures: upscaled";
+        return de ? "Bilder: Original" : "Pictures: original";
     case OptionItem::BuildPack: return de ? "Hochskalierte Bilder erstellen" : "Build upscaled pictures";
     case OptionItem::Close: return de ? "Weiterspielen" : "Back to the game";
     }

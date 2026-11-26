@@ -45,10 +45,11 @@ DOSBox needed:
   building keep their look, only sharper.
 - **The AdLib music,** played by an emulated sound chip.
 - **English and German,** both from the original release. Switch in the options
-  (**F12**); your game stays where it is.
-- **F11** (or Alt+Enter) switches fullscreen. **F12** opens the options:
-  language, 4:3 or square pixels, fullscreen.
-- **Pause** switches between the upscaled pictures and the original pixels.
+  (**F12** or **Ctrl+O**); your game stays where it is.
+- **F12** or **Ctrl+O** opens the options: language, 4:3 or square pixels,
+  fullscreen, upscaled or original pictures. **F11**, **Ctrl+F** or Alt+Enter
+  switches fullscreen, **Ctrl+P** (or Pause) the pictures. On a Mac, Cmd works
+  in place of Ctrl, and Cmd+, opens the options too.
 - **F1 to F10** are the game's own keys, as in the original.
 - **Saves** stay in the game's own format, ten slots in the office safe.
 
@@ -82,7 +83,7 @@ DOSBox needed:
 4. **Wait a moment.** The app unlocks the game with your files and upscales all
    1185 pictures. That takes under a minute on an M1 Pro, a few minutes with a
    slower graphics card. **Esc** skips it: you play with plain enlarged pixels
-   and can build the pictures later from the options (**F12**).
+   and can build the pictures later from the options (**F12** or **Ctrl+O**).
 5. **Play.** Later starts go straight to the game. Playing needs no internet
    connection.
 
@@ -131,8 +132,9 @@ next to your reply until it says "I've had enough. I quit.", click it, then clic
 (Cmd+Q, Alt+F4). Either way, save first in the safe in your office: the game
 does not save by itself.
 
-**Can I switch back to the original look?** Yes, press **Pause** while playing to
-switch between the upscaled pictures and the original pixels.
+**Can I switch back to the original look?** Yes. Press **Ctrl+P** (Cmd+P on a
+Mac) to switch between the upscaled pictures and the original pixels, or choose
+*Pictures* in the options (**F12** or **Ctrl+O**).
 
 **Can I copy the finished game to another computer?** Copy the app and your game
 files, and let the app set itself up there. Please do not upload your user folder
@@ -148,8 +150,10 @@ deinen Computer aus der
 starte sie und wähle den Ordner mit deinen Originaldateien (`MTV.EXE`,
 `SOURCE1.RSC`, `SOURCE2.RSC`, `INTRO.EXE`, `MCV.BIN`, `DATAV.PCK`). Die App prüft
 und kopiert sie, entsperrt damit das Spiel und skaliert alle Bilder auf deinem
-Rechner hoch. **F12** öffnet die Optionen (Sprache Deutsch/Englisch, Bildformat,
-Vollbild), **F11** schaltet auf Vollbild. Auf dem Mac öffnest du die App beim
+Rechner hoch. **F12** oder **Strg+O** öffnet die Optionen (Sprache Deutsch/Englisch,
+Bildformat, Vollbild, hochskalierte oder originale Bilder), **F11** oder
+**Strg+F** schaltet auf Vollbild, **Strg+P** zwischen hochskalierten und
+originalen Bildern. Auf dem Mac geht Cmd statt Strg. Auf dem Mac öffnest du die App beim
 ersten Mal über *Systemeinstellungen > Datenschutz & Sicherheit > Dennoch öffnen*,
 unter Windows über *Weitere Informationen > Trotzdem ausführen*. Auf dem Mac
 ziehst du MadTV aus dem Disk-Image in den Ordner *Programme*.

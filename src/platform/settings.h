@@ -8,7 +8,7 @@
 namespace mtv {
 struct KeyMap {
     std::string fullscreen = "F11"; // SDL key names
-    std::string graphics = "Pause"; // development toggle between Upscaled and Nearest
+    std::string graphics = "Pause"; // shortcut for Pictures in the options: upscaled or original
     std::string options = "F12";    // the options overlay (F1-F10 are the game's own hotkeys)
     bool operator==(const KeyMap&) const = default;
 };

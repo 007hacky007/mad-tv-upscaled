@@ -5,6 +5,7 @@
 #include "platform/pack_job.h"
 #include "platform/logic_loader.h"
 #include "platform/settings.h"
+#include "platform/shortcuts.h"
 #include "platform/ticker.h"
 #include "render/compositor.h"
 #include "render/gpu.h"
@@ -29,7 +30,6 @@ struct NoFrames : FrameSource {
     const Palette& palette() const override { return pal; }
     const Font* font() const override { return nullptr; }
 };
-bool key_matches(SDL_Keycode key, const std::string& name) { return !name.empty() && key == SDL_GetKeyFromName(name.c_str()); }
 std::filesystem::path utf8_path(const std::string& s) { return std::filesystem::path(std::u8string(s.begin(), s.end())); }
 std::filesystem::path pref_dir() {
     // MTV_USER_DIR replaces the per-user folder (tests and side-by-side installs).
@@ -218,25 +218,29 @@ int run_app(const AppOptions& options) {
         while (SDL_PollEvent(&e)) {
             switch (e.type) {
             case SDL_EVENT_QUIT: quit = true; break;
-            case SDL_EVENT_KEY_DOWN:
+            case SDL_EVENT_KEY_DOWN: {
                 if (pack_job.running()) { if (e.key.key == SDLK_ESCAPE) pack_job.cancel(); break; }
-                if (!intro && (key_matches(e.key.key, settings.keys.options) || (menu.is_open() && e.key.key == SDLK_ESCAPE))) {
+                const PortAction action = port_shortcut(e.key.key, e.key.mod, settings.keys);
+                if (!intro && (action == PortAction::Options || (menu.is_open() && e.key.key == SDLK_ESCAPE))) {
                     menu.set_open(!menu.is_open());
-                } else if (menu.is_open()) {
+                } else if (menu.is_open() && action == PortAction::None) {
                     if (e.key.key == SDLK_UP) menu.move(-1);
                     else if (e.key.key == SDLK_DOWN) menu.move(1);
                     else if (e.key.key == SDLK_RETURN || e.key.key == SDLK_SPACE) apply(menu.activate_selected(settings));
-                } else if (key_matches(e.key.key, settings.keys.fullscreen) || (e.key.key == SDLK_RETURN && (e.key.mod & SDL_KMOD_ALT))) {
-                    settings.fullscreen = !settings.fullscreen;
-                    SDL_SetWindowFullscreen(window, settings.fullscreen);
-                } else if (key_matches(e.key.key, settings.keys.graphics)) {
-                    settings.graphics_dev = settings.graphics_dev == GraphicsMode::Upscaled ? GraphicsMode::Nearest : GraphicsMode::Upscaled;
+                } else if (action == PortAction::Fullscreen) {
+                    menu.set_open(false);
+                    apply(menu.activate(ui::OptionItem::Fullscreen, settings));
+                } else if (action == PortAction::Pictures) {
+                    apply(menu.activate(ui::OptionItem::Pictures, settings));
+                } else if (action != PortAction::None) {
+                    // the options keys during the intro: nothing, and not a key for the intro either
                 } else if (intro) {
                     skip_intro = true;
                 } else {
                     input.key(e.key.key, e.key.mod);
                 }
                 break;
+            }
             case SDL_EVENT_MOUSE_MOTION: {
                 int w = 0, h = 0, pw = 0, ph = 0;
                 SDL_GetWindowSize(window, &w, &h);
@@ -278,8 +282,8 @@ int run_app(const AppOptions& options) {
                 } else notice = "Upscaled pictures: " + p.error().reason;
             } else {
                 std::cerr << "upscaled pictures not built: " << *err << '\n';
-                notice = settings.language == game::Language::German ? "Ohne hochskalierte Bilder (F12: erneut versuchen)."
-                                                                     : "No upscaled pictures (F12 to try again).";
+                notice = settings.language == game::Language::German ? "Ohne hochskalierte Bilder (F12 oder Strg+O: erneut versuchen)."
+                                                                     : "No upscaled pictures (F12 or Ctrl+O to try again).";
             }
             std::cerr << notice << '\n';
             notice_until = SDL_GetTicks() + 6000;

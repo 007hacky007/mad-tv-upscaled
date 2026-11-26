@@ -20,18 +20,27 @@ TEST_CASE("options_changes_settings_and_persists") {
     REQUIRE(back.has_value());
     CHECK(back.value() == s);
 }
-TEST_CASE("options_menu_has_no_graphics_entry") {
+TEST_CASE("options_menu_switches_the_pictures_when_a_pack_exists") {
     ui::OptionsMenu menu;
-    const auto& items = menu.items();
-    CHECK(std::find(items.begin(), items.end(), ui::OptionItem::Language) != items.end());
-    CHECK(std::find(items.begin(), items.end(), ui::OptionItem::Aspect) != items.end());
-    CHECK(std::find(items.begin(), items.end(), ui::OptionItem::Fullscreen) != items.end());
     Settings s;
-    for (auto it : items) {
-        const std::string l = menu.label(it, s);
-        CHECK(l.find("raphic") == std::string::npos);
-        CHECK(l.find("earest") == std::string::npos);
-    }
+    const auto has = [&] { const auto& i = menu.items(); return std::find(i.begin(), i.end(), ui::OptionItem::Pictures) != i.end(); };
+    menu.set_pack_available(false);
+    CHECK_FALSE(has());
+    menu.set_pack_available(true);
+    REQUIRE(has());
+    CHECK(menu.items().back() == ui::OptionItem::Close);
+    CHECK(menu.label(ui::OptionItem::Pictures, s) == "Pictures: upscaled");
+    CHECK(menu.activate(ui::OptionItem::Pictures, s) == ui::OptionChange::Pictures);
+    CHECK(s.graphics_dev == GraphicsMode::Nearest);
+    CHECK(menu.is_open() == false);
+    CHECK(menu.label(ui::OptionItem::Pictures, s) == "Pictures: original");
+    s.language = game::Language::German;
+    CHECK(menu.label(ui::OptionItem::Pictures, s) == "Bilder: Original");
+    menu.activate(ui::OptionItem::Pictures, s);
+    CHECK(s.graphics_dev == GraphicsMode::Upscaled);
+    CHECK(menu.label(ui::OptionItem::Pictures, s) == "Bilder: hochskaliert");
+    const auto p = menu.panel();
+    for (int i = 0; i < int(menu.items().size()); ++i) CHECK(menu.item_rect(i).y + menu.item_rect(i).h <= p.y + p.h);
 }
 TEST_CASE("labels_follow_the_language") {
     ui::OptionsMenu menu;
