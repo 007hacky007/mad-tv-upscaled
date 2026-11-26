@@ -1,0 +1,153 @@
+{
+ "schema_version": 1,
+ "note": "DS offsets in MTV.EXE (DS = Ghidra segment 0x49D4). Fields are added as they are identified.",
+ "fields": [
+  {
+   "name": "language",
+   "offset": "0x55C",
+   "type": "i16",
+   "evidence": "main 0x10545: 0 German, 1 English, -1 not chosen"
+  },
+  {
+   "name": "rng_state",
+   "offset": "0x1960",
+   "type": "u32",
+   "evidence": "srand/rand 0x49CCD/0x49CDE"
+  },
+  {
+   "name": "timer_100hz",
+   "offset": "0x902C",
+   "type": "u16",
+   "count": 4,
+   "evidence": "INT 08 handler of the loaded sound driver"
+  },
+  {
+   "name": "timer_50hz",
+   "offset": "0x9034",
+   "type": "u16",
+   "count": 4,
+   "evidence": "same; 0x9034 feeds random()"
+  },
+  {
+   "name": "timer_25hz",
+   "offset": "0x903C",
+   "type": "u16",
+   "count": 4,
+   "evidence": "same"
+  },
+  {
+   "name": "timer_10hz",
+   "offset": "0x9044",
+   "type": "u16",
+   "count": 4,
+   "evidence": "same"
+  },
+  {
+   "name": "random_base",
+   "offset": "0x8EAC",
+   "type": "u32",
+   "evidence": "random() 0x1D809; written at 0x1B505 from DS:6143"
+  },
+  {
+   "name": "state_1d00",
+   "offset": "0x1D00",
+   "type": "bytes",
+   "size": 8,
+   "evidence": "initialised from slot 208 by FUN_1054_0a0b (0x10F4B); field meanings named during Task 15"
+  },
+  {
+   "name": "state_6165",
+   "offset": "0x6165",
+   "type": "bytes",
+   "size": 208,
+   "evidence": "initialised from slot 208 by FUN_1054_0a0b (0x10F4B); field meanings named during Task 15"
+  },
+  {
+   "name": "state_8bdc",
+   "offset": "0x8BDC",
+   "type": "bytes",
+   "size": 92,
+   "evidence": "initialised from slot 208 by FUN_1054_0a0b (0x10F4B); field meanings named during Task 15"
+  },
+  {
+   "name": "state_5013",
+   "offset": "0x5013",
+   "type": "bytes",
+   "size": 1344,
+   "evidence": "initialised from slot 208 by FUN_1054_0a0b (0x10F4B); field meanings named during Task 15"
+  },
+  {
+   "name": "state_6235",
+   "offset": "0x6235",
+   "type": "bytes",
+   "size": 384,
+   "evidence": "initialised from slot 208 by FUN_1054_0a0b (0x10F4B); field meanings named during Task 15"
+  },
+  {
+   "name": "state_268e",
+   "offset": "0x268E",
+   "type": "bytes",
+   "size": 96,
+   "evidence": "initialised from slot 208 by FUN_1054_0a0b (0x10F4B); field meanings named during Task 15"
+  },
+  {
+   "name": "state_1d09",
+   "offset": "0x1D09",
+   "type": "bytes",
+   "size": 1848,
+   "evidence": "initialised from slot 208 by FUN_1054_0a0b (0x10F4B); field meanings named during Task 15"
+  },
+  {
+   "name": "state_724a",
+   "offset": "0x724A",
+   "type": "bytes",
+   "size": 88,
+   "evidence": "initialised from slot 208 by FUN_1054_0a0b (0x10F4B); field meanings named during Task 15"
+  },
+  {
+   "name": "state_7b42",
+   "offset": "0x7B42",
+   "type": "bytes",
+   "size": 180,
+   "evidence": "initialised from slot 208 by FUN_1054_0a0b (0x10F4B); field meanings named during Task 15"
+  },
+  {
+   "name": "state_7c82",
+   "offset": "0x7C82",
+   "type": "bytes",
+   "size": 1708,
+   "evidence": "initialised from slot 208 by FUN_1054_0a0b (0x10F4B); field meanings named during Task 15"
+  },
+  {
+   "name": "state_7160",
+   "offset": "0x7160",
+   "type": "bytes",
+   "size": 128,
+   "evidence": "initialised from slot 208 by FUN_1054_0a0b (0x10F4B); field meanings named during Task 15"
+  },
+  {
+   "name": "player_index",
+   "offset": "0x7A36",
+   "type": "i16",
+   "evidence": "indexes 0x1CE-byte player records at DS:1D09 (FUN_1aa4_2243)"
+  },
+  {
+   "name": "game_hour",
+   "offset": "0x71EA",
+   "type": "i16",
+   "evidence": "set to 0x11 at new game (main 0x10545, 0x12620); clock shown in the office panel"
+  },
+  {
+   "name": "game_minute",
+   "offset": "0x71EC",
+   "type": "i16",
+   "evidence": "compared with 0x36/4 in the clock routine 0x12620; advances with the office clock"
+  },
+  {
+   "name": "game_day",
+   "offset": "0x71E4",
+   "type": "i16",
+   "evidence": "1 on the first day, 2 after midnight (native idle run of 100000 retraces); hour returns to 17"
+  }
+ ]
+}

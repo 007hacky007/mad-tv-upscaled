@@ -1,0 +1,7 @@
+{
+ "note": "SHA-256 of 320x200 RGB24 frames captured in DOSBox (tools/dosbox-mac harness, 6-bit DAC expanded as v<<2|v>>4). Hashes only, no game data.",
+ "language_prompt": "2dd92861f44762ce477dd7968bb89fe389eb5d1d79a12d9d6de84fcf50300000",
+ "title": "e9901c45d52ae01c0f468c6cb8fbf8f623df55cc8c8f46bac5828832e88740c8",
+ "player_select_drawing": "99bacfcffa590451ed739e695609d68db561bdf05eb8e296cde476f9c14be32a",
+ "player_select": "84f8e70636845b9b38f03fb1c3875c6514944b9b374f29e106ae5ea6e5c95cef"
+}

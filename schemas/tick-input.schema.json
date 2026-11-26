@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mad TV tick recording",
+  "type": "object",
+  "required": ["schema_version", "tick_hz", "events", "timer_reads"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "tick_hz": {"const": 100},
+    "events": {"type": "array", "items": {"type": "object", "required": ["tick", "mouse_x", "mouse_y", "buttons", "keys"],
+      "properties": {"tick": {"type": "integer", "minimum": 0}, "mouse_x": {"type": "integer", "minimum": 0, "maximum": 319},
+        "mouse_y": {"type": "integer", "minimum": 0, "maximum": 199}, "buttons": {"type": "integer", "minimum": 0, "maximum": 3},
+        "keys": {"type": "array", "items": {"type": "string"}}}}},
+    "timer_reads": {"type": "array", "description": "Timer-counter values the original read inside random(), in call order",
+      "items": {"type": "object", "required": ["tick", "address", "value"], "properties": {"tick": {"type": "integer"}, "address": {"type": "integer"}, "value": {"type": "integer"}}}}
+  }
+}

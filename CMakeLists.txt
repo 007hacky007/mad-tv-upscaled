@@ -1,0 +1,142 @@
+cmake_minimum_required(VERSION 3.25)
+project(mad_tv VERSION 0.0.1 LANGUAGES C CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+add_compile_options("-ffile-prefix-map=${CMAKE_SOURCE_DIR}=." "-fdebug-prefix-map=${CMAKE_SOURCE_DIR}=.")
+include(cmake/Dependencies.cmake)
+if(WIN32)
+ # The app and the mtv-logic library share one C++ runtime (libc++.dll, libunwind.dll), so exceptions raised by
+ # the app unwind through the library's frames. Everything else stays static.
+ add_link_options(-static-libgcc)
+ set(MTV_MINGW_RUNTIME "${CMAKE_FIND_ROOT_PATH}/bin/libc++.dll" "${CMAKE_FIND_ROOT_PATH}/bin/libunwind.dll")
+endif()
+
+add_library(mtv-core STATIC src/platform/app_options.cpp src/data/byte_reader.cpp src/data/hash.cpp src/data/mz.cpp src/data/lzexe.cpp src/debug/tick_input.cpp src/debug/state_dump.cpp src/data/rsc.cpp src/data/powerpacker.cpp src/data/rsc_codec.cpp src/data/image.cpp src/render/palette.cpp src/data/text.cpp src/data/font.cpp src/data/exe_tables.cpp src/data/music.cpp src/data/animation.cpp src/intro/ega.cpp src/intro/intro_data.cpp src/intro/intro.cpp)
+target_include_directories(mtv-core PUBLIC src)
+target_link_libraries(mtv-core PUBLIC mtv-json)
+if(WIN32)
+ target_compile_definitions(mtv-core PUBLIC _WIN32_WINNT=0x0A00 WINVER=0x0A00)
+endif()
+
+add_executable(mtv src/main.cpp src/platform/app.cpp)
+target_include_directories(mtv PRIVATE tools/vendor/stb)
+target_link_libraries(mtv PRIVATE mtv-core SDL3::SDL3)
+if(WIN32)
+ target_sources(mtv PRIVATE packaging/windows/app.rc)
+ add_custom_command(TARGET mtv POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_FILE:SDL3::SDL3> $<TARGET_FILE_DIR:mtv>)
+endif()
+
+add_executable(mtv-tool tools/main.cpp tools/extract.cpp tools/logic_tool.cpp)
+target_link_libraries(mtv-tool PRIVATE mtv-core)
+target_include_directories(mtv-tool PRIVATE tools/vendor/stb)
+target_sources(mtv-tool PRIVATE tools/coverage.cpp tools/viewer.cpp tools/pack_tool.cpp)
+target_compile_definitions(mtv-tool PRIVATE MTV_SOURCE_ROOT="${CMAKE_SOURCE_DIR}")
+target_link_libraries(mtv-tool PRIVATE SDL3::SDL3)
+if(WIN32)
+ target_sources(mtv-tool PRIVATE packaging/windows/tool.rc)
+endif()
+
+add_library(mtv-render STATIC src/render/draw_list.cpp src/render/gpu.cpp src/render/pack.cpp src/render/compositor.cpp)
+target_include_directories(mtv-render PRIVATE tools/vendor/stb)
+set_source_files_properties(src/render/compositor.cpp src/render/pack.cpp PROPERTIES COMPILE_OPTIONS "-O2")
+target_link_libraries(mtv-render PUBLIC mtv-core SDL3::SDL3)
+target_link_libraries(mtv PRIVATE mtv-render)
+# Building the upscale pack on the player's machine (and the image export it starts from).
+add_library(mtv-art STATIC src/art/export.cpp src/art/pack_builder.cpp src/art/stb_write.cpp)
+target_include_directories(mtv-art PRIVATE tools/vendor/stb)
+set_source_files_properties(src/art/pack_builder.cpp src/art/stb_write.cpp PROPERTIES COMPILE_OPTIONS "-O2")
+target_link_libraries(mtv-art PUBLIC mtv-core mtv-render SDL3::SDL3)
+target_link_libraries(mtv PRIVATE mtv-art)
+target_link_libraries(mtv-tool PRIVATE mtv-art)
+add_library(mtv-audio STATIC src/audio/opl.cpp tools/vendor/ymfm/ymfm_opl.cpp tools/vendor/ymfm/ymfm_adpcm.cpp tools/vendor/ymfm/ymfm_pcm.cpp)
+target_include_directories(mtv-audio PUBLIC src tools/vendor/ymfm)
+target_link_libraries(mtv-audio PUBLIC mtv-core)
+set_source_files_properties(tools/vendor/ymfm/ymfm_opl.cpp tools/vendor/ymfm/ymfm_adpcm.cpp tools/vendor/ymfm/ymfm_pcm.cpp PROPERTIES COMPILE_OPTIONS "-w;-O2")
+# Unlocking the encrypted game logic (Monocypher: BLAKE2b, XChaCha20-Poly1305).
+add_library(mtv-crypto STATIC src/platform/logic_crypto.cpp tools/vendor/monocypher/monocypher.c)
+target_include_directories(mtv-crypto PUBLIC src PRIVATE tools/vendor/monocypher)
+target_link_libraries(mtv-crypto PUBLIC mtv-core)
+set_source_files_properties(tools/vendor/monocypher/monocypher.c PROPERTIES COMPILE_OPTIONS "-O2")
+add_library(mtv-platform STATIC src/platform/input.cpp src/platform/settings.cpp src/platform/import.cpp src/platform/logic_loader.cpp src/platform/install.cpp src/platform/pack_job.cpp src/ui/options.cpp)
+target_link_libraries(mtv-platform PUBLIC mtv-core mtv-crypto mtv-art SDL3::SDL3)
+target_link_libraries(mtv PRIVATE mtv-platform)
+target_link_libraries(mtv-tool PRIVATE mtv-platform)
+if(WIN32)
+ target_link_libraries(mtv-tool PRIVATE bcrypt)
+endif()
+
+find_package(Python3 REQUIRED COMPONENTS Interpreter)
+# Translated program code is generated at build time from the user's game files and never committed.
+set(MTV_GAME_DIR "${CMAKE_SOURCE_DIR}/mad-tv" CACHE PATH "Directory with the original Mad TV files")
+set(MTV_PYTHON "${CMAKE_SOURCE_DIR}/tools/cache/pyenv/bin/python" CACHE FILEPATH "Python with capstone for the translator")
+if(EXISTS "${MTV_GAME_DIR}/MTV.EXE" AND EXISTS "${MTV_PYTHON}")
+ set(MTV_GEN "${CMAKE_BINARY_DIR}/gen")
+ set(MTV_GEN_FILES "${MTV_GEN}/mtv.h" "${MTV_GEN}/mtv_table.cpp" "${MTV_GEN}/blobs.cpp")
+ foreach(i RANGE 0 15)
+  string(LENGTH "${i}" len)
+  if(len EQUAL 1)
+   set(i "0${i}")
+  endif()
+  list(APPEND MTV_GEN_FILES "${MTV_GEN}/mtv_${i}.cpp")
+ endforeach()
+ foreach(p pal98 pal95 pal99)
+  list(APPEND MTV_GEN_FILES "${MTV_GEN}/${p}_00.cpp" "${MTV_GEN}/${p}_table.cpp")
+ endforeach()
+ add_custom_command(OUTPUT ${MTV_GEN_FILES}
+  COMMAND "${MTV_PYTHON}" "${CMAKE_SOURCE_DIR}/tools/recomp/generate.py" --game "${MTV_GAME_DIR}" --out "${MTV_GEN}"
+  DEPENDS "${CMAKE_SOURCE_DIR}/tools/recomp/generate.py" "${CMAKE_SOURCE_DIR}/tools/recomp/x86recomp.py" "${MTV_GAME_DIR}/MTV.EXE" "${MTV_GAME_DIR}/SOURCE1.RSC"
+  COMMENT "Translating MTV.EXE and the Palladix drivers")
+ file(READ "${CMAKE_SOURCE_DIR}/analysis/evidence/state-layout.json" MTV_STATE_LAYOUT)
+ file(CONFIGURE OUTPUT "${MTV_GEN}/state_layout.cpp" CONTENT "namespace mtv::game { extern const char* const kStateLayoutJson; const char* const kStateLayoutJson = R\"mtvjson(${MTV_STATE_LAYOUT})mtvjson\"; }\n" @ONLY)
+ set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS "${CMAKE_SOURCE_DIR}/analysis/evidence/state-layout.json")
+ # Build id shared by the app and the mtv-logic library: a hash of the generated translation and its runtime,
+ # computed after the translator runs, so any change to the library's code gives a new id.
+ set(MTV_LOGIC_ID_H "${MTV_GEN}/logic_build_id.h")
+ add_custom_command(OUTPUT "${MTV_LOGIC_ID_H}" "${CMAKE_BINARY_DIR}/logic-build-id.txt"
+  COMMAND ${CMAKE_COMMAND} -DGEN=${MTV_GEN} -DROOT=${CMAKE_SOURCE_DIR} -DOUT_H=${MTV_LOGIC_ID_H} -DOUT_TXT=${CMAKE_BINARY_DIR}/logic-build-id.txt
+          -P ${CMAKE_SOURCE_DIR}/cmake/logic_build_id.cmake
+  DEPENDS ${MTV_GEN_FILES} cmake/logic_build_id.cmake src/rt/cpu.h src/rt/cpu.cpp src/rt/machine.h src/rt/blobs.h src/rt/logic.h src/rt/logic_export.cpp
+  COMMENT "Computing the game logic build id")
+ add_custom_target(mtv-logic-id DEPENDS "${MTV_LOGIC_ID_H}")
+ # The translated code, compiled once: linked statically into tools and tests, and into the mtv-logic library.
+ add_library(mtv-logic-obj OBJECT ${MTV_GEN_FILES})
+ target_include_directories(mtv-logic-obj PUBLIC src "${MTV_GEN}")
+ target_compile_options(mtv-logic-obj PRIVATE -O2 -Wno-unused-label -Wno-unused-variable -Wno-parentheses-equality)
+ set_target_properties(mtv-logic-obj PROPERTIES POSITION_INDEPENDENT_CODE ON CXX_VISIBILITY_PRESET hidden VISIBILITY_INLINES_HIDDEN ON)
+ add_library(mtv-logic-static STATIC $<TARGET_OBJECTS:mtv-logic-obj> src/rt/logic_static.cpp)
+ target_include_directories(mtv-logic-static PUBLIC src "${MTV_GEN}")
+ add_library(mtv-logic SHARED $<TARGET_OBJECTS:mtv-logic-obj> src/rt/logic_export.cpp src/rt/cpu.cpp)
+ target_include_directories(mtv-logic PRIVATE src "${MTV_GEN}")
+ add_dependencies(mtv-logic mtv-logic-id)
+ set_target_properties(mtv-logic PROPERTIES PREFIX "" OUTPUT_NAME mtv-logic CXX_VISIBILITY_PRESET hidden VISIBILITY_INLINES_HIDDEN ON)
+ # Runtime and game state; the translated code comes in as rt::LogicTables.
+ add_library(mtv-game STATIC "${MTV_GEN}/state_layout.cpp" src/rt/cpu.cpp src/rt/dos.cpp src/game/game.cpp src/game/provenance.cpp)
+ target_include_directories(mtv-game PUBLIC src)
+ target_compile_options(mtv-game PRIVATE -O2)
+ target_link_libraries(mtv-game PUBLIC mtv-core)
+ target_compile_definitions(mtv-tool PRIVATE MTV_HAVE_GAME=1)
+ target_sources(mtv-tool PRIVATE tools/run_game.cpp tools/call_fn.cpp)
+ target_link_libraries(mtv-tool PRIVATE mtv-game mtv-logic-static mtv-audio mtv-render)
+ target_compile_definitions(mtv PRIVATE MTV_HAVE_GAME=1)
+ target_link_libraries(mtv PRIVATE mtv-game mtv-audio)
+ target_include_directories(mtv-platform PRIVATE "${MTV_GEN}")
+ target_include_directories(mtv-tool PRIVATE "${MTV_GEN}")
+ add_dependencies(mtv-platform mtv-logic-id)
+ add_dependencies(mtv-tool mtv-logic-id)
+ add_dependencies(mtv mtv-logic)
+ if(WIN32)
+  add_custom_command(TARGET mtv POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${MTV_MINGW_RUNTIME} $<TARGET_FILE_DIR:mtv>)
+ endif()
+ # The upscale pack takes minutes on the GPU, so it is built on request: cmake --build <dir> --target mtv-pack
+ add_custom_target(mtv-pack
+  COMMAND "${Python3_EXECUTABLE}" "${CMAKE_SOURCE_DIR}/tools/art/build_pack.py" --tool $<TARGET_FILE:mtv-tool> --data "${MTV_GAME_DIR}" --out "${CMAKE_BINARY_DIR}/pack" --work "${CMAKE_BINARY_DIR}/pack-work"
+  DEPENDS mtv-tool
+  COMMENT "Upscaling every image frame 6x into ${CMAKE_BINARY_DIR}/pack"
+  USES_TERMINAL)
+endif()
+
+include(CTest)
+if(BUILD_TESTING)
+ add_subdirectory(tests)
+endif()

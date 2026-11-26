@@ -1,0 +1,235 @@
+{
+ "schema_version": 1,
+ "note": "Copied by APFS clone from ../horke-leto/tools/vendor with the same versions and hashes. The patched DOSBox-X reference build (dosbox_mac) is built under tools/cache/dosbox-mac by tools/dosbox-mac/build.py; ghidra is used from ~/tools/ghidra_12.2_PUBLIC.",
+ "host": {
+  "os": "27.0.1",
+  "architecture": "arm64"
+ },
+ "shader_route": {
+  "metal": "Author MSL source; compile through SDL_CreateGPUShader with SDL_GPU_SHADERFORMAT_MSL on Metal. Bodies deferred to rendering milestones.",
+  "d3d12": "Offline DXC ps_6_0/vs_6_0 -> DXIL in Windows 11 via winbench. Tested fragment probe at work/m0/probe.dxil. Compiler stays under tools/ on host and private VM work folder.",
+  "probe": "analysis/evidence/shader-dxc.json"
+ },
+ "tools": [
+  {
+   "name": "cmake",
+   "version": "cmake version 4.4.3",
+   "path": "/opt/homebrew/bin/cmake",
+   "sha256": "01bb5214684f5390e96e0d6aef7aafd7415b77ecbcfd59f6b55b018d8de0d9a2",
+   "license": "https://cmake.org/licensing/",
+   "acquisition": "pre-existing; read-only use"
+  },
+  {
+   "name": "clang++",
+   "version": "Apple clang version 21.0.0 (clang-2100.4.1.1)",
+   "path": "/usr/bin/clang++",
+   "sha256": "34129c71a01a74f7f3b2443521519b2e5447553fa187f5fcafaaf8c42cc192e2",
+   "license": "/Applications/Xcode.app/Contents/Resources/en.lproj/License.rtf",
+   "acquisition": "pre-existing; read-only use"
+  },
+  {
+   "name": "ninja",
+   "version": "1.13.2",
+   "path": "/opt/homebrew/bin/ninja",
+   "sha256": "a75ab11ced61c31783228dff8303975d62eb7e7761cbd12c537a95792a4fbc3f",
+   "license": "/opt/homebrew/Cellar/ninja/1.13.2/COPYING",
+   "acquisition": "pre-existing; read-only use"
+  },
+  {
+   "name": "java",
+   "version": "openjdk version \"27\" 2026-09-15",
+   "path": "/Library/Java/JavaVirtualMachines/temurin-27.jdk/Contents/Home/bin/java",
+   "sha256": "c8586bb2233ed876cbf5a4e556389b2569e13b4413fc595aeafa530a6ba9ee6b",
+   "license": "/Library/Java/JavaVirtualMachines/temurin-27.jdk/Contents/Home/legal/java.base/LICENSE",
+   "acquisition": "pre-existing; read-only use"
+  },
+  {
+   "name": "llvm-mingw",
+   "version": "20261104 UCRT",
+   "path": "tools/vendor/llvm-mingw-20261104-ucrt-macos-universal/bin/clang",
+   "sha256": "97592a451344bcb6c686a2ed55cc8162dd1f9451dc89fe4aaa64de93b7dc58a2",
+   "license": "tools/vendor/llvm-mingw-20261104-ucrt-macos-universal/LICENSE.TXT",
+   "download": {
+    "name": "llvm-mingw-20261104-ucrt-macos-universal.tar.xz",
+    "url": "https://github.com/mstorsjo/llvm-mingw/releases/download/20261104/llvm-mingw-20261104-ucrt-macos-universal.tar.xz",
+    "sha256": "66cbd5178c4a71b0d473e68ede172f8eb7d15d023e67f39201d0a69e21f6bf3c",
+    "bytes": 125261696,
+    "upstream_digest": "sha256:66cbd5178c4a71b0d473e68ede172f8eb7d15d023e67f39201d0a69e21f6bf3c"
+   }
+  },
+  {
+   "name": "ghidra",
+   "version": "12.2",
+   "path": "tools/vendor/ghidra_12.2_PUBLIC/Ghidra/Features/Decompiler/os/mac_arm_64/decompile",
+   "sha256": "5a30323ebbed09e68c11ab6af92d3d64609d09961f28e47144914bce32a2cb0c",
+   "license": "tools/vendor/ghidra_12.2_PUBLIC/LICENSE",
+   "download": {
+    "name": "ghidra_12.2_PUBLIC_20261016.zip",
+    "url": "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.2_build/ghidra_12.2_PUBLIC_20261016.zip",
+    "sha256": "2c2cd776db3c1f6a097ba418922378ac3649cadd5e844a6f5f088ae628a7be67",
+    "bytes": 569712708,
+    "upstream_digest": "sha256:2c2cd776db3c1f6a097ba418922378ac3649cadd5e844a6f5f088ae628a7be67"
+   }
+  },
+  {
+   "name": "dosbox-x",
+   "version": "2026.10.01 b6abbd5 SDL2",
+   "path": "tools/dosbox-x/dosbox-x-sdl2/dosbox-x.app/Contents/MacOS/dosbox-x",
+   "sha256": "bad60deaa4cfbe9ce3ed391f3ebc30e3d62f1008abf4cc7663d0143ba60d8f37",
+   "license": "tools/reference/upstream/dosbox/COPYING",
+   "download": {
+    "name": "dosbox-x-macosx-arm64-2026.10.01.zip",
+    "url": "https://github.com/joncampbell123/dosbox-x/releases/download/dosbox-x-v2026.10.01/dosbox-x-macosx-arm64-2026.10.01.zip",
+    "sha256": "8514ab856e8ac2611fbdac7adf334c34085c1e00d700a88711f842adec50240f",
+    "bytes": 94369585,
+    "upstream_digest": "sha256:8514ab856e8ac2611fbdac7adf334c34085c1e00d700a88711f842adec50240f"
+   }
+  },
+  {
+   "name": "dxc",
+   "version": "1.9.2609.5 01b62ad47",
+   "path": "tools/vendor/dxc-1.9.2609/bin/x64/dxc.exe",
+   "sha256": "aa7965b3763d9c710baaa5a28cedcc633449962a75d1391d161a85304a41b3e2",
+   "license": "tools/vendor/dxc-1.9.2609/LICENCE-MIT.txt",
+   "download": {
+    "url": "https://github.com/microsoft/DirectXShaderCompiler/releases/download/v1.9.2609/dxc_2026_09_29.zip",
+    "sha256": "ad31b1fc8443175d204f77a611fdb3ef2ec42759bdc2f1167368de24a4a7e7f1",
+    "bytes": 32287592
+   }
+  }
+ ],
+ "dependencies": [
+  {
+   "name": "doctest",
+   "version": "2.4.12",
+   "repo": "doctest/doctest",
+   "requested_ref": "v2.4.12",
+   "commit": "1da23a3e8119ec5cce4f9388e91b065e20bf06f5",
+   "license": "tools/vendor/doctest/LICENSE.txt",
+   "files_sha256": {
+    "tools/vendor/doctest/LICENSE.txt": "0fe0b331fa1513dcce8604ff1fa925f32d1cea17d8aeb1c2471fad40d291adc5",
+    "tools/vendor/doctest/doctest/doctest.h": "94029a7d32da24a56249658147dbd2b33ff0b9ed665295cbbaf19aafff5b0ced"
+   }
+  },
+  {
+   "name": "json",
+   "version": "3.12.0",
+   "repo": "nlohmann/json",
+   "requested_ref": "v3.12.0",
+   "commit": "55f93686c01528224f448c19128836e7df245f72",
+   "license": "tools/vendor/json/LICENSE.MIT",
+   "files_sha256": {
+    "tools/vendor/json/LICENSE.MIT": "46a65cffd1ea955132d95a8dd921640714a8d6b537d2e4e482d31145ae95b603",
+    "tools/vendor/json/single_include/nlohmann/json.hpp": "aaf127c04cb31c406e5b04a63f1ae89369fccde6d8fa7cdda1ed4f32dfc5de63"
+   }
+  },
+  {
+   "name": "stb",
+   "version": "commit-pinned",
+   "repo": "nothings/stb",
+   "requested_ref": "master",
+   "commit": "9600522de53973336fa033a289858a4354cbb04c",
+   "license": "tools/vendor/stb/LICENSE",
+   "files_sha256": {
+    "tools/vendor/stb/LICENSE": "eb36e45c704dd0b59730115523e089b051852625b4db0a6fe76c991900af20e7",
+    "tools/vendor/stb/stb_image_write.h": "a8e7f77f0ccfdc9bac09a71268b131931ff81aafca82c393aeb6aaba10d9e7ca",
+    "tools/vendor/stb/stb_image.h": "deb4f18c9ca21b751a1323019031c94c0bf5ca1d2929ef5913cc56f00aab6e91"
+   }
+  },
+  {
+   "name": "SDL3",
+   "version": "3.4.20",
+   "path": "tools/vendor/SDL3-3.4.20",
+   "license": "tools/vendor/SDL3-3.4.20/LICENSE.txt",
+   "download": {
+    "name": "SDL3-3.4.20.tar.gz",
+    "url": "https://github.com/libsdl-org/SDL/releases/download/release-3.4.20/SDL3-3.4.20.tar.gz",
+    "sha256": "f3bb06f55bed9557227a700af2ea62e49497ebdf58037732a731a5fb3ef8581f",
+    "bytes": 15656494,
+    "upstream_digest": "sha256:f3bb06f55bed9557227a700af2ea62e49497ebdf58037732a731a5fb3ef8581f"
+   }
+  },
+  {
+   "name": "ymfm",
+   "version": "git 2026-07-27",
+   "repo": "aaronsgiles/ymfm",
+   "requested_ref": "main",
+   "commit": "81aec25ccbb98f4873a255f7551ac4dadac59b4a",
+   "license": "tools/vendor/ymfm/LICENSE",
+   "note": "BSD-3-Clause YM3812 (OPL2) emulation for the AdLib output; only the OPL sources are copied",
+   "files_sha256": {
+    "tools/vendor/ymfm/LICENSE": "2d2e9213c170a9866c616fa85b6da993a6724e10befc61f468ed9bfb84c4691c",
+    "tools/vendor/ymfm/ymfm.h": "f5ab6fed63c8669abab8403e0e93132e1dad0ae4d8e4954e7836ab9e5b228405",
+    "tools/vendor/ymfm/ymfm_adpcm.cpp": "74e5ded129ea7e532112e5b637d0a7bd4e127fd83331f1fac32011723051d4e0",
+    "tools/vendor/ymfm/ymfm_adpcm.h": "5933691971493b853a9be443f6e6fd74f63869aa21225f66dd89fc20de20914d",
+    "tools/vendor/ymfm/ymfm_fm.h": "1b27bfb7fa4963d7c54cb06fd9bf659450362d8ed496c6af7d487b068cac45c9",
+    "tools/vendor/ymfm/ymfm_fm.ipp": "4fb7fe59d4494a19e9f9c7888eb644a63d86e109fdefb27a8117bf6a5f6ab4b9",
+    "tools/vendor/ymfm/ymfm_opl.cpp": "e745673678d0de9733488427397e794d42348bb000dd45f6665d6f063963d517",
+    "tools/vendor/ymfm/ymfm_opl.h": "b01d13720c61cf040d10a2e68ee3e002e4467b9c795978514d58be6245dcbda5",
+    "tools/vendor/ymfm/ymfm_pcm.cpp": "3099d770b876dcdcb8a4c15df48fcc3475f22eca5a144b66581bfa7ebbf499ab",
+    "tools/vendor/ymfm/ymfm_pcm.h": "d738b45f9406da413d29334ec062f217c42811af68ffa599ae4a2dc839cc2200"
+   }
+  },
+  {
+   "name": "monocypher",
+   "version": "4.0.2",
+   "download": {
+    "url": "https://monocypher.org/download/monocypher-4.0.2.tar.gz",
+    "sha256": "38d07179738c0c90677dba3ceb7a7b8496bcfea758ba1a53e803fed30ae0879c"
+   },
+   "license": "tools/vendor/monocypher/LICENCE.md",
+   "note": "BSD-2-Clause or CC0-1.0; BLAKE2b and XChaCha20-Poly1305 for the encrypted game logic; src/monocypher.c, src/monocypher.h and LICENCE.md are copied",
+   "files_sha256": {
+    "tools/vendor/monocypher/LICENCE.md": "5f8360e4c06ddcc584bdb4b210c6af824c4bb301e6a9a521869b6d90795ca4b3",
+    "tools/vendor/monocypher/monocypher.c": "afe2b098c8569577a84488e0b98d276d1fba6506adea68bb9241a52111734c59",
+    "tools/vendor/monocypher/monocypher.h": "f78bb31255cfb7beba66afd2137f5194c8a025cf40488b6cc1e295234d43f374"
+   }
+  }
+ ],
+ "dosbox_mac": {
+  "version": "2026.10.01",
+  "requested_ref": "dosbox-x-v2026.10.01",
+  "commit": "b6abbd5980a885f5f310a4088c59a8688d1b116c",
+  "source": {
+   "url": "https://codeload.github.com/joncampbell123/dosbox-x/tar.gz/refs/tags/dosbox-x-v2026.10.01",
+   "archive": "tools/cache/dosbox-mac/dosbox-x-v2026.10.01.tar.gz",
+   "sha256": "df023a6c0e4a139dcbd60befff5947e0db2cc68e4e79db463670f581a4044ed4"
+  },
+  "license": {
+   "spdx": "GPL-2.0-or-later",
+   "path": "tools/cache/dosbox-mac/dosbox-x-dosbox-x-v2026.10.01/COPYING",
+   "sha256": "93c59ba0fd92fef7746f0e0809cb49a0c27ab21376da0ac6a583688401afd441"
+  },
+  "patch": "tools/dosbox-mac/dosbox-x.patch",
+  "controller_sources": [
+   "tools/dosbox-mac/ref_control.cpp",
+   "tools/dosbox-mac/ref_control.h"
+  ],
+  "build": "tools/dosbox-mac/build.py",
+  "architecture": "arm64",
+  "sdl": "SDL2",
+  "local_libraries": "Pre-existing Homebrew libraries, no global installs; versions and hashes in evidence"
+ },
+ "upscaler": {
+  "method": {
+   "pre": "nearest x2",
+   "model": "realesr-animevideov3",
+   "model_scale": 3,
+   "mask": "same method, threshold 128"
+  },
+  "scale": 6,
+  "runner_sha256": "c1c35d92079085de96b9d547fd7e4464bc8a2e9ccf28d7b8c712d72ade91b7cc",
+  "model_sha256": "548a36f9c3f4ab8da56cd3b13badf23968bee207b396dad14d04b830e5f2ab2d",
+  "param_sha256": "d1a5755008791d09b57e3425fc9dd0bd26b00fdf79c606210bc0e693f8230881",
+  "licences": "tools/upscalers/licenses (runner MIT, Real-ESRGAN BSD-3-Clause, ncnn BSD-3-Clause, libwebp BSD-3-Clause, MoltenVK Apache-2.0); the runner and the x3 model ship in the packages, where they build the upscaled art on the player's machine",
+  "windows": {
+   "download": {
+    "url": "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesrgan-ncnn-vulkan-20220424-windows.zip",
+    "sha256": "abc02804e17982a3be33675e4d471e91ea374e65b70167abc09e31acb412802d"
+   },
+   "unpacked_to": "tools/upscalers/realesrgan-20220424-windows (realesrgan-ncnn-vulkan.exe, vcomp140.dll, models/realesr-animevideov3-x3.*)",
+   "runner_sha256": "07e49f7cbb4ede01ae4dd4c399d3a7e5846e3d2085c3128eff881e55cb7b1a0c",
+   "vcomp140_sha256": "8f72ef2e483465444b2059fc6744d6cb22cd8d8a27f6fa56befd2a42dcd0f78b"
+  }
+ }
+}

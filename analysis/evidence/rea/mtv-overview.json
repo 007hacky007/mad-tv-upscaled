@@ -1,0 +1,851 @@
+{
+  "result": {
+    "_meta": {
+      "provenance": {
+        "untrusted_content": true,
+        "source": "analysis_target"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"evidence_id\":\"ev_c2d29120855a6ea51c82947d1e26bbacdee890e68862a430fbe825f23e24affa\",\"subject\":{\"name\":\"MTV.EXE\",\"digest\":{\"sha256\":\"656e44191a6fa1bec77ee7ad26d94d05ff07c7c54980914564aa2d8803f841ca\"},\"local_path\":\"work/unpacked/MTV.EXE\",\"format\":\"dos-mz\",\"architecture\":\"x86\"},\"provider\":{\"id\":\"rea-workflow\",\"name\":\"REA composed investigation workflow\",\"version\":\"1\"},\"analysis_profile\":{\"provider\":{\"id\":\"rea-workflow\",\"name\":\"REA composed investigation workflow\",\"version\":\"1\"},\"parameters\":{\"upstream_analysis_profile\":{\"provider\":{\"id\":\"ghidra\",\"name\":\"Ghidra\",\"version\":\"12.2\"},\"parameters\":{\"target_kind\":\"executable\",\"target_format\":\"dos-mz\",\"architecture\":\"x86\",\"available_architectures\":[\"x86\"],\"import_mode\":\"ephemeral-source-immutable\",\"annotation_policy\":\"atomic-function-entry-metadata-v1\",\"byte_search_boundary\":\"contiguous-eligible-initialized-blocks-v1\",\"load_image_observations\":\"source-mappings-entry-context-relocation-symbol-v3\",\"function_body_evidence\":\"complete-inclusive-ranges-v1\",\"function_references\":\"complete-body-and-entry-reference-manager-v3\",\"call_relationship_coverage\":\"observed-call-inventory-and-discovery-v7\",\"function_dossier_coverage\":\"observed-facets-and-call-relationships-v1\",\"native_value_flow_projection\":\"accepted-runtime-budgets-v1\",\"value_flow_effect_scope\":\"pcode-load-store-explicit-v1\",\"string_inventory_evidence\":\"defined-data-coverage-v1\",\"inventory_search_projection\":\"provider-inventory-facts-v1\",\"data_type_observations\":\"bit-field-base-and-lookup-v1\",\"location_resolution\":\"explicit-address-exact-entry-symbol-first-v3\",\"procedure_search\":\"primary-and-exact-entry-symbol-names-v1\",\"procedure_file_offset_resolution\":\"address-first-unique-target-source-mapping-v2\",\"instruction_flow_evidence\":\"decoded-return-pcode-v1\",\"instruction_status\":\"unlisted-and-containing-code-data-v3\",\"instruction_references\":\"exact-address-incoming-without-synthetic-entry-v3\",\"byte_search_coverage\":\"separate-loaded-overlays-v1\",\"function_boundary_observations\":\"ghidra-function-boundary-limitations-v4\",\"no_return_repair\":\"returning-imports-decoded-return-v2\",\"process_launch\":\"inspected-jvm-launch-support-v1\",\"load_image_evidence\":\"independent-mz-mapping-relocations-v2\",\"jump_table_evidence\":\"typed-case-default-blocks-v1\",\"decompiler_jump_loads\":true,\"loader\":\"MzLoader\",\"language_id\":\"x86:LE:16:Real Mode\",\"compiler_spec_id\":\"default\",\"load_segment\":\"0x1000\",\"address_coordinates\":\"linear-byte-offset\",\"analyzer_preset\":\"ghidra-default\",\"function_coordinate_context\":{\"kind\":\"native-function-coordinate-context-v1\",\"selected_image\":null,\"mapping_sha256\":\"7c248f097b8d2da919ace5922b89e57e7bd711397944d920da8a116756ea602e\"}},\"digest\":\"31fb59605f9c819c05bc1eba7a4be26b1636083324fa7d0b318448ffc40236fa\"},\"source_limitations\":\"provider-operation-caveats-v1\",\"workflow_revision\":5},\"digest\":\"41f79b5984122e86f83662d36bdc95249e9275633b78c89301761f1dc84b489f\"},\"predicate_type\":\"rea.analysis\",\"operation\":\"binary_overview\",\"parameters\":{},\"raw_result\":null,\"normalized_result\":{\"document\":\"target-656e44191a6f.EXE\",\"image_base\":\"0x0\",\"segments\":[{\"name\":\"CODE_0\",\"start\":\"0x10000\",\"end\":\"0x10540\",\"length\":1344,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_1\",\"start\":\"0x10540\",\"end\":\"0x148c7\",\"length\":17287,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_2\",\"start\":\"0x148c7\",\"end\":\"0x15ffa\",\"length\":5939,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_3\",\"start\":\"0x15ffa\",\"end\":\"0x1aa4e\",\"length\":19028,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_4\",\"start\":\"0x1aa4e\",\"end\":\"0x1d5e1\",\"length\":11155,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_5\",\"start\":\"0x1d5e1\",\"end\":\"0x1ddd1\",\"length\":2032,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_6\",\"start\":\"0x1ddd1\",\"end\":\"0x1e350\",\"length\":1407,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_7\",\"start\":\"0x1e350\",\"end\":\"0x1ed74\",\"length\":2596,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_8\",\"start\":\"0x1ed74\",\"end\":\"0x205ee\",\"length\":6266,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_9\",\"start\":\"0x205ee\",\"end\":\"0x24e1e\",\"length\":18480,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_10\",\"start\":\"0x24e1e\",\"end\":\"0x293df\",\"length\":17857,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_11\",\"start\":\"0x293df\",\"end\":\"0x2c18c\",\"length\":11693,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_12\",\"start\":\"0x2c18c\",\"end\":\"0x2da86\",\"length\":6394,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_13\",\"start\":\"0x2da86\",\"end\":\"0x322a1\",\"length\":18459,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_14\",\"start\":\"0x322a1\",\"end\":\"0x329e7\",\"length\":1862,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_15\",\"start\":\"0x329e7\",\"end\":\"0x34b8c\",\"length\":8613,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_16\",\"start\":\"0x34b8c\",\"end\":\"0x36a7d\",\"length\":7921,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_17\",\"start\":\"0x36a7d\",\"end\":\"0x3b746\",\"length\":19657,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_18\",\"start\":\"0x3b746\",\"end\":\"0x3dd47\",\"length\":9729,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_19\",\"start\":\"0x3dd47\",\"end\":\"0x3dd9c\",\"length\":85,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_20\",\"start\":\"0x3dd9c\",\"end\":\"0x42baa\",\"length\":19982,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_21\",\"start\":\"0x42baa\",\"end\":\"0x448b3\",\"length\":7433,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_22\",\"start\":\"0x448b3\",\"end\":\"0x45f1a\",\"length\":5735,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_23\",\"start\":\"0x45f1a\",\"end\":\"0x45f83\",\"length\":105,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_24\",\"start\":\"0x45f83\",\"end\":\"0x465de\",\"length\":1627,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_25\",\"start\":\"0x465de\",\"end\":\"0x465fb\",\"length\":29,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_26\",\"start\":\"0x465fb\",\"end\":\"0x46f49\",\"length\":2382,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_27\",\"start\":\"0x46f49\",\"end\":\"0x471e0\",\"length\":663,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_28\",\"start\":\"0x471e0\",\"end\":\"0x47367\",\"length\":391,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_29\",\"start\":\"0x47367\",\"end\":\"0x47375\",\"length\":14,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_30\",\"start\":\"0x47375\",\"end\":\"0x473b9\",\"length\":68,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_31\",\"start\":\"0x473b9\",\"end\":\"0x473f9\",\"length\":64,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_32\",\"start\":\"0x473f9\",\"end\":\"0x47410\",\"length\":23,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_33\",\"start\":\"0x47410\",\"end\":\"0x47421\",\"length\":17,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_34\",\"start\":\"0x47421\",\"end\":\"0x47431\",\"length\":16,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_35\",\"start\":\"0x47431\",\"end\":\"0x47458\",\"length\":39,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_36\",\"start\":\"0x47458\",\"end\":\"0x47476\",\"length\":30,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_37\",\"start\":\"0x47476\",\"end\":\"0x474e9\",\"length\":115,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_38\",\"start\":\"0x474e9\",\"end\":\"0x4755d\",\"length\":116,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_39\",\"start\":\"0x4755d\",\"end\":\"0x475b9\",\"length\":92,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_40\",\"start\":\"0x475b9\",\"end\":\"0x47628\",\"length\":111,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_41\",\"start\":\"0x47628\",\"end\":\"0x476d3\",\"length\":171,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_42\",\"start\":\"0x476d3\",\"end\":\"0x477ac\",\"length\":217,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_43\",\"start\":\"0x477ac\",\"end\":\"0x47865\",\"length\":185,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_44\",\"start\":\"0x47865\",\"end\":\"0x4795c\",\"length\":247,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_45\",\"start\":\"0x4795c\",\"end\":\"0x47a21\",\"length\":197,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_46\",\"start\":\"0x47a21\",\"end\":\"0x47b42\",\"length\":289,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_47\",\"start\":\"0x47b42\",\"end\":\"0x482ce\",\"length\":1932,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_48\",\"start\":\"0x482ce\",\"end\":\"0x48331\",\"length\":99,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_49\",\"start\":\"0x48331\",\"end\":\"0x48394\",\"length\":99,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_50\",\"start\":\"0x48394\",\"end\":\"0x483e7\",\"length\":83,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_51\",\"start\":\"0x483e7\",\"end\":\"0x48482\",\"length\":155,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_52\",\"start\":\"0x48482\",\"end\":\"0x48584\",\"length\":258,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_53\",\"start\":\"0x48584\",\"end\":\"0x48592\",\"length\":14,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_54\",\"start\":\"0x48592\",\"end\":\"0x485d1\",\"length\":63,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_55\",\"start\":\"0x485d1\",\"end\":\"0x48bcc\",\"length\":1531,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_56\",\"start\":\"0x48bcc\",\"end\":\"0x48c08\",\"length\":60,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_57\",\"start\":\"0x48c08\",\"end\":\"0x48c3b\",\"length\":51,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_58\",\"start\":\"0x48c3b\",\"end\":\"0x48c6a\",\"length\":47,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_59\",\"start\":\"0x48c6a\",\"end\":\"0x48f7a\",\"length\":784,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_60\",\"start\":\"0x48f7a\",\"end\":\"0x490cc\",\"length\":338,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_61\",\"start\":\"0x490cc\",\"end\":\"0x490ec\",\"length\":32,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_62\",\"start\":\"0x490ec\",\"end\":\"0x4928c\",\"length\":416,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_63\",\"start\":\"0x4928c\",\"end\":\"0x492d9\",\"length\":77,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_64\",\"start\":\"0x492d9\",\"end\":\"0x49306\",\"length\":45,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_65\",\"start\":\"0x49306\",\"end\":\"0x49337\",\"length\":49,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_66\",\"start\":\"0x49337\",\"end\":\"0x4935d\",\"length\":38,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_67\",\"start\":\"0x4935d\",\"end\":\"0x49422\",\"length\":197,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_68\",\"start\":\"0x49422\",\"end\":\"0x49442\",\"length\":32,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_69\",\"start\":\"0x49442\",\"end\":\"0x495a8\",\"length\":358,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_70\",\"start\":\"0x495a8\",\"end\":\"0x495f4\",\"length\":76,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_71\",\"start\":\"0x495f4\",\"end\":\"0x49621\",\"length\":45,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_72\",\"start\":\"0x49621\",\"end\":\"0x4971d\",\"length\":252,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_73\",\"start\":\"0x4971d\",\"end\":\"0x49738\",\"length\":27,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_74\",\"start\":\"0x49738\",\"end\":\"0x49761\",\"length\":41,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_75\",\"start\":\"0x49761\",\"end\":\"0x497a6\",\"length\":69,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_76\",\"start\":\"0x497a6\",\"end\":\"0x497c7\",\"length\":33,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_77\",\"start\":\"0x497c7\",\"end\":\"0x4985d\",\"length\":150,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_78\",\"start\":\"0x4985d\",\"end\":\"0x49b81\",\"length\":804,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_79\",\"start\":\"0x49b81\",\"end\":\"0x49b91\",\"length\":16,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_80\",\"start\":\"0x49b91\",\"end\":\"0x49c1b\",\"length\":138,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_81\",\"start\":\"0x49c1b\",\"end\":\"0x49c87\",\"length\":108,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_82\",\"start\":\"0x49c87\",\"end\":\"0x49ccd\",\"length\":70,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_83\",\"start\":\"0x49ccd\",\"end\":\"0x49d06\",\"length\":57,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_84\",\"start\":\"0x49d06\",\"end\":\"0x49d40\",\"length\":58,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_85\",\"start\":\"0x49d40\",\"end\":\"0x54560\",\"length\":43040,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"CODE_86\",\"start\":\"0x54560\",\"end\":\"0x545c1\",\"length\":97,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"DATA\",\"start\":\"0x545c1\",\"end\":\"0x545d1\",\"length\":16,\"image_base\":\"0x0\",\"address_space\":\"ram\"},{\"name\":\"HEADER\",\"start\":\"HEADER:0x0\",\"end\":\"HEADER:0x4680\",\"length\":18048,\"image_base\":\"0x0\",\"address_space\":\"HEADER\"}],\"segment_count\":89,\"procedure_count\":691,\"string_count\":17,\"inventory_coverage\":{\"scope\":\"provider_inventory\",\"discovery_coverage\":\"unknown\"}},\"confidence\":\"derived\",\"authority\":\"shipped-artifact\",\"environment\":null,\"limitations\":[\"Derived by an REA composed workflow.\",\"Ghidra (ghidra 12.2) read_binary_inventory_summary: Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.\",\"Ghidra (ghidra 12.2) read_binary_inventory_summary: Counts use the complete defined-string inventory and the same local/external function inventory as list_strings and list_procedures. They do not establish discovery of undefined strings or unidentified functions.\",\"Ghidra (ghidra 12.2) read_binary_inventory_summary: DOS MZ uses 16-bit x86 real mode with the Ghidra load segment 0x1000. Returned addresses are linear byte coordinates; they do not identify a unique segment:offset alias.\",\"Ghidra (ghidra 12.2) read_binary_inventory_summary: Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.\",\"Ghidra (ghidra 12.2) read_binary_inventory_summary: Ghidra Program checkpoint mode is disabled: closing discards metadata edits; original executable bytes are unchanged. For stock ELF/PE/Mach-O on Linux/macOS, set REA_GHIDRA_CHECKPOINT_DIR to a private absolute directory before starting REA (restart MCP after changing its startup environment).\",\"Ghidra (ghidra 12.2) read_binary_inventory_summary: Memory-block end addresses are exclusive; segment lengths use those observed address coordinates.\",\"Ghidra (ghidra 12.2) read_binary_inventory_summary: Only Ghidra-defined string Data is observed; packed or undefined string bytes may be absent. Completeness applies to that inventory, and an empty search does not establish that text is absent from the artifact. If an address is known, use read_bytes and xrefs to inspect bytes and references.\",\"Ghidra (ghidra 12.2) read_binary_inventory_summary: Static DOS analysis does not emulate BIOS, DOS interrupts, device ports, or self-modifying unpacking code. Packed targets require a separately identified unpacked artifact for original-program analysis; appended overlays are not the initialized load module.\",\"Ghidra (ghidra 12.2) read_binary_inventory_summary: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.\",\"Ghidra (ghidra 12.2) read_binary_inventory_summary: This session uses Ghidra 12.2. The bridge is verified against 12.1.4; other 12.x (>=12.1) builds are accepted and the observed version is reported.\",\"Ghidra (ghidra 12.2) read_binary_inventory_summary: macOS sessions require a matching executable Ghidra native decompiler; REA checks for it but does not build native components or change Gatekeeper quarantine state.\"],\"relationship_coverage\":null,\"locations\":[],\"evidence_links\":[\"ev_5ebbec4ce1dffc5c430637e7bbbdb0ae589f381e511577466f0455cb9fc0eccd\"]}"
+      }
+    ],
+    "structuredContent": {
+      "evidence_id": "ev_c2d29120855a6ea51c82947d1e26bbacdee890e68862a430fbe825f23e24affa",
+      "subject": {
+        "name": "MTV.EXE",
+        "digest": {
+          "sha256": "656e44191a6fa1bec77ee7ad26d94d05ff07c7c54980914564aa2d8803f841ca"
+        },
+        "local_path": "work/unpacked/MTV.EXE",
+        "format": "dos-mz",
+        "architecture": "x86"
+      },
+      "provider": {
+        "id": "rea-workflow",
+        "name": "REA composed investigation workflow",
+        "version": "1"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "rea-workflow",
+          "name": "REA composed investigation workflow",
+          "version": "1"
+        },
+        "parameters": {
+          "upstream_analysis_profile": {
+            "provider": {
+              "id": "ghidra",
+              "name": "Ghidra",
+              "version": "12.2"
+            },
+            "parameters": {
+              "target_kind": "executable",
+              "target_format": "dos-mz",
+              "architecture": "x86",
+              "available_architectures": [
+                "x86"
+              ],
+              "import_mode": "ephemeral-source-immutable",
+              "annotation_policy": "atomic-function-entry-metadata-v1",
+              "byte_search_boundary": "contiguous-eligible-initialized-blocks-v1",
+              "load_image_observations": "source-mappings-entry-context-relocation-symbol-v3",
+              "function_body_evidence": "complete-inclusive-ranges-v1",
+              "function_references": "complete-body-and-entry-reference-manager-v3",
+              "call_relationship_coverage": "observed-call-inventory-and-discovery-v7",
+              "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+              "native_value_flow_projection": "accepted-runtime-budgets-v1",
+              "value_flow_effect_scope": "pcode-load-store-explicit-v1",
+              "string_inventory_evidence": "defined-data-coverage-v1",
+              "inventory_search_projection": "provider-inventory-facts-v1",
+              "data_type_observations": "bit-field-base-and-lookup-v1",
+              "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+              "procedure_search": "primary-and-exact-entry-symbol-names-v1",
+              "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+              "instruction_flow_evidence": "decoded-return-pcode-v1",
+              "instruction_status": "unlisted-and-containing-code-data-v3",
+              "instruction_references": "exact-address-incoming-without-synthetic-entry-v3",
+              "byte_search_coverage": "separate-loaded-overlays-v1",
+              "function_boundary_observations": "ghidra-function-boundary-limitations-v4",
+              "no_return_repair": "returning-imports-decoded-return-v2",
+              "process_launch": "inspected-jvm-launch-support-v1",
+              "load_image_evidence": "independent-mz-mapping-relocations-v2",
+              "jump_table_evidence": "typed-case-default-blocks-v1",
+              "decompiler_jump_loads": true,
+              "loader": "MzLoader",
+              "language_id": "x86:LE:16:Real Mode",
+              "compiler_spec_id": "default",
+              "load_segment": "0x1000",
+              "address_coordinates": "linear-byte-offset",
+              "analyzer_preset": "ghidra-default",
+              "function_coordinate_context": {
+                "kind": "native-function-coordinate-context-v1",
+                "selected_image": null,
+                "mapping_sha256": "7c248f097b8d2da919ace5922b89e57e7bd711397944d920da8a116756ea602e"
+              }
+            },
+            "digest": "31fb59605f9c819c05bc1eba7a4be26b1636083324fa7d0b318448ffc40236fa"
+          },
+          "source_limitations": "provider-operation-caveats-v1",
+          "workflow_revision": 5
+        },
+        "digest": "41f79b5984122e86f83662d36bdc95249e9275633b78c89301761f1dc84b489f"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "binary_overview",
+      "parameters": {},
+      "raw_result": null,
+      "normalized_result": {
+        "document": "target-656e44191a6f.EXE",
+        "image_base": "0x0",
+        "segments": [
+          {
+            "name": "CODE_0",
+            "start": "0x10000",
+            "end": "0x10540",
+            "length": 1344,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_1",
+            "start": "0x10540",
+            "end": "0x148c7",
+            "length": 17287,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_2",
+            "start": "0x148c7",
+            "end": "0x15ffa",
+            "length": 5939,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_3",
+            "start": "0x15ffa",
+            "end": "0x1aa4e",
+            "length": 19028,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_4",
+            "start": "0x1aa4e",
+            "end": "0x1d5e1",
+            "length": 11155,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_5",
+            "start": "0x1d5e1",
+            "end": "0x1ddd1",
+            "length": 2032,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_6",
+            "start": "0x1ddd1",
+            "end": "0x1e350",
+            "length": 1407,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_7",
+            "start": "0x1e350",
+            "end": "0x1ed74",
+            "length": 2596,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_8",
+            "start": "0x1ed74",
+            "end": "0x205ee",
+            "length": 6266,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_9",
+            "start": "0x205ee",
+            "end": "0x24e1e",
+            "length": 18480,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_10",
+            "start": "0x24e1e",
+            "end": "0x293df",
+            "length": 17857,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_11",
+            "start": "0x293df",
+            "end": "0x2c18c",
+            "length": 11693,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_12",
+            "start": "0x2c18c",
+            "end": "0x2da86",
+            "length": 6394,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_13",
+            "start": "0x2da86",
+            "end": "0x322a1",
+            "length": 18459,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_14",
+            "start": "0x322a1",
+            "end": "0x329e7",
+            "length": 1862,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_15",
+            "start": "0x329e7",
+            "end": "0x34b8c",
+            "length": 8613,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_16",
+            "start": "0x34b8c",
+            "end": "0x36a7d",
+            "length": 7921,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_17",
+            "start": "0x36a7d",
+            "end": "0x3b746",
+            "length": 19657,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_18",
+            "start": "0x3b746",
+            "end": "0x3dd47",
+            "length": 9729,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_19",
+            "start": "0x3dd47",
+            "end": "0x3dd9c",
+            "length": 85,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_20",
+            "start": "0x3dd9c",
+            "end": "0x42baa",
+            "length": 19982,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_21",
+            "start": "0x42baa",
+            "end": "0x448b3",
+            "length": 7433,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_22",
+            "start": "0x448b3",
+            "end": "0x45f1a",
+            "length": 5735,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_23",
+            "start": "0x45f1a",
+            "end": "0x45f83",
+            "length": 105,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_24",
+            "start": "0x45f83",
+            "end": "0x465de",
+            "length": 1627,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_25",
+            "start": "0x465de",
+            "end": "0x465fb",
+            "length": 29,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_26",
+            "start": "0x465fb",
+            "end": "0x46f49",
+            "length": 2382,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_27",
+            "start": "0x46f49",
+            "end": "0x471e0",
+            "length": 663,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_28",
+            "start": "0x471e0",
+            "end": "0x47367",
+            "length": 391,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_29",
+            "start": "0x47367",
+            "end": "0x47375",
+            "length": 14,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_30",
+            "start": "0x47375",
+            "end": "0x473b9",
+            "length": 68,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_31",
+            "start": "0x473b9",
+            "end": "0x473f9",
+            "length": 64,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_32",
+            "start": "0x473f9",
+            "end": "0x47410",
+            "length": 23,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_33",
+            "start": "0x47410",
+            "end": "0x47421",
+            "length": 17,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_34",
+            "start": "0x47421",
+            "end": "0x47431",
+            "length": 16,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_35",
+            "start": "0x47431",
+            "end": "0x47458",
+            "length": 39,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_36",
+            "start": "0x47458",
+            "end": "0x47476",
+            "length": 30,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_37",
+            "start": "0x47476",
+            "end": "0x474e9",
+            "length": 115,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_38",
+            "start": "0x474e9",
+            "end": "0x4755d",
+            "length": 116,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_39",
+            "start": "0x4755d",
+            "end": "0x475b9",
+            "length": 92,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_40",
+            "start": "0x475b9",
+            "end": "0x47628",
+            "length": 111,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_41",
+            "start": "0x47628",
+            "end": "0x476d3",
+            "length": 171,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_42",
+            "start": "0x476d3",
+            "end": "0x477ac",
+            "length": 217,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_43",
+            "start": "0x477ac",
+            "end": "0x47865",
+            "length": 185,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_44",
+            "start": "0x47865",
+            "end": "0x4795c",
+            "length": 247,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_45",
+            "start": "0x4795c",
+            "end": "0x47a21",
+            "length": 197,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_46",
+            "start": "0x47a21",
+            "end": "0x47b42",
+            "length": 289,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_47",
+            "start": "0x47b42",
+            "end": "0x482ce",
+            "length": 1932,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_48",
+            "start": "0x482ce",
+            "end": "0x48331",
+            "length": 99,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_49",
+            "start": "0x48331",
+            "end": "0x48394",
+            "length": 99,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_50",
+            "start": "0x48394",
+            "end": "0x483e7",
+            "length": 83,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_51",
+            "start": "0x483e7",
+            "end": "0x48482",
+            "length": 155,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_52",
+            "start": "0x48482",
+            "end": "0x48584",
+            "length": 258,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_53",
+            "start": "0x48584",
+            "end": "0x48592",
+            "length": 14,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_54",
+            "start": "0x48592",
+            "end": "0x485d1",
+            "length": 63,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_55",
+            "start": "0x485d1",
+            "end": "0x48bcc",
+            "length": 1531,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_56",
+            "start": "0x48bcc",
+            "end": "0x48c08",
+            "length": 60,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_57",
+            "start": "0x48c08",
+            "end": "0x48c3b",
+            "length": 51,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_58",
+            "start": "0x48c3b",
+            "end": "0x48c6a",
+            "length": 47,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_59",
+            "start": "0x48c6a",
+            "end": "0x48f7a",
+            "length": 784,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_60",
+            "start": "0x48f7a",
+            "end": "0x490cc",
+            "length": 338,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_61",
+            "start": "0x490cc",
+            "end": "0x490ec",
+            "length": 32,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_62",
+            "start": "0x490ec",
+            "end": "0x4928c",
+            "length": 416,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_63",
+            "start": "0x4928c",
+            "end": "0x492d9",
+            "length": 77,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_64",
+            "start": "0x492d9",
+            "end": "0x49306",
+            "length": 45,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_65",
+            "start": "0x49306",
+            "end": "0x49337",
+            "length": 49,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_66",
+            "start": "0x49337",
+            "end": "0x4935d",
+            "length": 38,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_67",
+            "start": "0x4935d",
+            "end": "0x49422",
+            "length": 197,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_68",
+            "start": "0x49422",
+            "end": "0x49442",
+            "length": 32,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_69",
+            "start": "0x49442",
+            "end": "0x495a8",
+            "length": 358,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_70",
+            "start": "0x495a8",
+            "end": "0x495f4",
+            "length": 76,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_71",
+            "start": "0x495f4",
+            "end": "0x49621",
+            "length": 45,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_72",
+            "start": "0x49621",
+            "end": "0x4971d",
+            "length": 252,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_73",
+            "start": "0x4971d",
+            "end": "0x49738",
+            "length": 27,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_74",
+            "start": "0x49738",
+            "end": "0x49761",
+            "length": 41,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_75",
+            "start": "0x49761",
+            "end": "0x497a6",
+            "length": 69,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_76",
+            "start": "0x497a6",
+            "end": "0x497c7",
+            "length": 33,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_77",
+            "start": "0x497c7",
+            "end": "0x4985d",
+            "length": 150,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_78",
+            "start": "0x4985d",
+            "end": "0x49b81",
+            "length": 804,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_79",
+            "start": "0x49b81",
+            "end": "0x49b91",
+            "length": 16,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_80",
+            "start": "0x49b91",
+            "end": "0x49c1b",
+            "length": 138,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_81",
+            "start": "0x49c1b",
+            "end": "0x49c87",
+            "length": 108,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_82",
+            "start": "0x49c87",
+            "end": "0x49ccd",
+            "length": 70,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_83",
+            "start": "0x49ccd",
+            "end": "0x49d06",
+            "length": 57,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_84",
+            "start": "0x49d06",
+            "end": "0x49d40",
+            "length": 58,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_85",
+            "start": "0x49d40",
+            "end": "0x54560",
+            "length": 43040,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "CODE_86",
+            "start": "0x54560",
+            "end": "0x545c1",
+            "length": 97,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "DATA",
+            "start": "0x545c1",
+            "end": "0x545d1",
+            "length": 16,
+            "image_base": "0x0",
+            "address_space": "ram"
+          },
+          {
+            "name": "HEADER",
+            "start": "HEADER:0x0",
+            "end": "HEADER:0x4680",
+            "length": 18048,
+            "image_base": "0x0",
+            "address_space": "HEADER"
+          }
+        ],
+        "segment_count": 89,
+        "procedure_count": 691,
+        "string_count": 17,
+        "inventory_coverage": {
+          "scope": "provider_inventory",
+          "discovery_coverage": "unknown"
+        }
+      },
+      "confidence": "derived",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "Derived by an REA composed workflow.",
+        "Ghidra (ghidra 12.2) read_binary_inventory_summary: Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Ghidra (ghidra 12.2) read_binary_inventory_summary: Counts use the complete defined-string inventory and the same local/external function inventory as list_strings and list_procedures. They do not establish discovery of undefined strings or unidentified functions.",
+        "Ghidra (ghidra 12.2) read_binary_inventory_summary: DOS MZ uses 16-bit x86 real mode with the Ghidra load segment 0x1000. Returned addresses are linear byte coordinates; they do not identify a unique segment:offset alias.",
+        "Ghidra (ghidra 12.2) read_binary_inventory_summary: Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Ghidra (ghidra 12.2) read_binary_inventory_summary: Ghidra Program checkpoint mode is disabled: closing discards metadata edits; original executable bytes are unchanged. For stock ELF/PE/Mach-O on Linux/macOS, set REA_GHIDRA_CHECKPOINT_DIR to a private absolute directory before starting REA (restart MCP after changing its startup environment).",
+        "Ghidra (ghidra 12.2) read_binary_inventory_summary: Memory-block end addresses are exclusive; segment lengths use those observed address coordinates.",
+        "Ghidra (ghidra 12.2) read_binary_inventory_summary: Only Ghidra-defined string Data is observed; packed or undefined string bytes may be absent. Completeness applies to that inventory, and an empty search does not establish that text is absent from the artifact. If an address is known, use read_bytes and xrefs to inspect bytes and references.",
+        "Ghidra (ghidra 12.2) read_binary_inventory_summary: Static DOS analysis does not emulate BIOS, DOS interrupts, device ports, or self-modifying unpacking code. Packed targets require a separately identified unpacked artifact for original-program analysis; appended overlays are not the initialized load module.",
+        "Ghidra (ghidra 12.2) read_binary_inventory_summary: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "Ghidra (ghidra 12.2) read_binary_inventory_summary: This session uses Ghidra 12.2. The bridge is verified against 12.1.4; other 12.x (>=12.1) builds are accepted and the observed version is reported.",
+        "Ghidra (ghidra 12.2) read_binary_inventory_summary: macOS sessions require a matching executable Ghidra native decompiler; REA checks for it but does not build native components or change Gatekeeper quarantine state."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": [
+        "ev_5ebbec4ce1dffc5c430637e7bbbdb0ae589f381e511577466f0455cb9fc0eccd"
+      ]
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 3
+}

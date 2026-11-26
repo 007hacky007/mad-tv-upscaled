@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MTV.EXE function map",
+  "type": "object",
+  "required": ["schema_version", "functions"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "functions": {"type": "array", "items": {"type": "object",
+      "required": ["address", "name", "class", "subsystem", "port_target"],
+      "properties": {
+        "address": {"type": "string"}, "ghidra_name": {"type": "string"}, "segment": {"type": "string"}, "name": {"type": "string"},
+        "class": {"enum": ["crt", "driver_video", "driver_input", "driver_sound", "game", "ui", "data_load", "copy_protection"]},
+        "subsystem": {"type": "string"}, "port_target": {"type": "string"}, "notes": {"type": "string"}}}}
+  }
+}

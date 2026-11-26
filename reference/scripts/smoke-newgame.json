@@ -1,0 +1,87 @@
+[
+ {
+  "tick": 250,
+  "keys": [
+   "e"
+  ]
+ },
+ {
+  "tick": 490,
+  "keys": [
+   "enter"
+  ]
+ },
+ {
+  "tick": 980,
+  "keys": [
+   "space"
+  ]
+ },
+ {
+  "tick": 1470,
+  "mouse": [
+   63,
+   100
+  ]
+ },
+ {
+  "tick": 1490,
+  "buttons": 1
+ },
+ {
+  "tick": 1510,
+  "buttons": 0
+ },
+ {
+  "tick": 2000,
+  "dump": true
+ },
+ {
+  "tick": 3000,
+  "dump": true
+ },
+ {
+  "tick": 4000,
+  "dump": true
+ },
+ {
+  "tick": 5000,
+  "dump": true
+ },
+ {
+  "tick": 6000,
+  "dump": true
+ },
+ {
+  "tick": 7000,
+  "dump": true
+ },
+ {
+  "tick": 8000,
+  "dump": true
+ },
+ {
+  "tick": 9000,
+  "dump": true
+ },
+ {
+  "tick": 10000,
+  "dump": true
+ },
+ {
+  "tick": 11000,
+  "dump": true
+ },
+ {
+  "tick": 12000,
+  "dump": true
+ },
+ {
+  "tick": 13000,
+  "dump": true
+ },
+ {
+  "tick": 14000,
+  "dump": true
+ }
+]

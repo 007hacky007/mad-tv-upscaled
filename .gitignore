@@ -1,0 +1,15 @@
+# Original game data and anything derived from it
+mad-tv/
+analysis/original/
+work/
+build/
+# Downloaded or generated tooling
+tools/cache/
+tools/rea/
+tools/dosbox-x/
+tools/upscalers/
+tools/downloads/
+tools/vendor/
+__pycache__/
+*.pyc
+.DS_Store

@@ -1,0 +1,154 @@
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -28,7 +28,7 @@
+ .rc.o:
+ 	$(WINDRES) -o $@ $<
+ 
+-dosbox_x_SOURCES = dosbox.cpp $(ico_stuff)
++dosbox_x_SOURCES = dosbox.cpp ref_control.cpp ref_control.h $(ico_stuff)
+ dosbox_x_LDADD = debug/libdebug.a dos/libdos.a shell/libshell.a builtin/libbuiltin.a \
+                ints/libints.a hardware/serialport/libserial.a hardware/parport/libparallel.a \
+                libs/passthroughio/libpassthroughio.a gui/libgui.a libs/gui_tk/libgui_tk.a hardware/libhardware.a \
+--- a/src/dosbox.cpp
++++ b/src/dosbox.cpp
+@@ -82,6 +82,7 @@
+ #include "parport.h"
+ #include "keyboard.h"
+ #include "clockdomain.h"
++#include "ref_control.h"
+ 
+ #if __APPLE__ && __MAC_OS_X_VERSION_MIN_REQUIRED < 101200
+ /* FIX_ME: A workaround to avoid build error. Change version to 101300 if error occurs for Sierra (10.12) */
+@@ -469,6 +470,7 @@
+ 
+     try {
+         while (1) {
++            REF_Pump();
+ #if defined(C_DEBUG) && defined(C_DOSBOX_AGENT)
+             dosbox_agent::AGENT_BridgePump();
+ #endif
+@@ -569,7 +571,9 @@
+ 	return 0;
+ }
+ 
+-void increaseticks() { //Make it return ticksRemain and set it in the function above to remove the global variable.
++void increaseticks() {
++    if (REF_Enabled()) { ticksRemain = 1; return; }
++    //Make it return ticksRemain and set it in the function above to remove the global variable.
+     static int32_t lastsleepDone = -1;
+     static Bitu sleep1count = 0;
+     if (GCC_UNLIKELY(ticksLocked)) { // For Fast Forward Mode
+--- a/src/gui/render.cpp
++++ b/src/gui/render.cpp
+@@ -472,6 +472,8 @@
+ 
+ void VGA_DebugOverlay();
+ 
++extern void REF_Frame(const void*, unsigned, unsigned, unsigned, unsigned, const void*);
++
+ void RENDER_EndUpdate( bool abort ) {
+     //LOG_MSG("RENDER_EndUpdate called abort=%d", abort ? 1 : 0);
+     if (GCC_UNLIKELY(!render.updating))
+@@ -483,6 +485,8 @@
+     if (!abort && render.active && RENDER_DrawLine == RENDER_ClearCacheHandler)
+         render.scale.clearCache = false;
+ 
++    if (!abort) REF_Frame(scalerSourceCacheBuffer, render.src.width, render.src.height,
++                          render.src.bpp, render.scale.cachePitch, &render.pal.rgb);
+     RENDER_DrawLine = RENDER_EmptyLineHandler;
+     if (render.disablerender) {
+         GFX_EndUpdate(nullptr);
+--- a/src/hardware/vga_draw.cpp
++++ b/src/hardware/vga_draw.cpp
+@@ -1121,7 +1121,11 @@
+         dst[i]=vga.draw.linear_base[(vidstart+i)&vga.draw.linear_mask];
+ }
+ 
++extern void REF_RawLine(const uint8_t*, unsigned, unsigned, unsigned, unsigned, unsigned, const uint32_t*);
++
+ static uint8_t * VGA_Draw_Xlat32_Linear_Line(Bitu vidstart, Bitu /*line*/) {
++    REF_RawLine(vga.draw.linear_base, vidstart, vga.draw.linear_mask, vga.draw.lines_done,
++                vga.draw.width, vga.draw.height, vga.dac.xlat32);
+     uint32_t* temps = (uint32_t*) TempLine;
+ 
+     /* hack for Surprise! productions "copper" demo.
+--- a/src/ints/mouse.cpp
++++ b/src/ints/mouse.cpp
+@@ -983,6 +983,13 @@
+             mouse.y = mouse.max_y;
+     }
+ 
++    Mouse_AddEvent(MOUSE_HAS_MOVED);
++}
++
++// Reference input sets the INT 33h position directly, in the driver's own coordinates.
++void REF_MouseAbsolute(unsigned x, unsigned y) {
++    mouse.x = std::max(float(mouse.min_x), std::min(float(mouse.max_x), float(x)));
++    mouse.y = std::max(float(mouse.min_y), std::min(float(mouse.max_y), float(y)));
+     Mouse_AddEvent(MOUSE_HAS_MOVED);
+ }
+ 
+--- a/src/misc/savestates.cpp
++++ b/src/misc/savestates.cpp
+@@ -148,6 +148,7 @@
+ 
+ 	void notifyError(const std::string& message, bool log=true)
+ 	{
++        if (getenv("DOSBOX_REF_SOCKET")) { LOG_MSG("Reference state error: %s", message.c_str()); return; }
+ 		if (log) LOG_MSG("%s",message.c_str());
+ 		systemmessagebox("Error",message.c_str(),"ok","error", 1);
+ 	}
+@@ -419,7 +420,10 @@
+ 		NULL/*password*/,0/*crcFile*/,1/*zip64*/);
+ }
+ 
+-void SaveState::save(size_t slot) { //throw (Error)
++bool reference_state_ok = false;
++
++void SaveState::save(size_t slot) {
++    reference_state_ok = false; //throw (Error)
+ 	if (slot >= SLOT_COUNT*MAX_PAGE)  return;
+ #ifdef C_SDL2
+         SDL_PauseAudioDevice(SDL2_AudioDevice, 0);
+@@ -569,6 +573,7 @@
+ 
+ 	if (!dos_kernel_disabled) flagged_backup((char *)save.c_str());
+ 
++	reference_state_ok = !save_err;
+ 	if (save_err)
+ 		notifyError(MSG_Get("SAVE_FAILED"));
+ 	else
+@@ -576,6 +581,7 @@
+ }
+ 
+ void savestatecorrupt(const char* part) {
++    if (getenv("DOSBOX_REF_SOCKET")) E_Exit("Reference state corrupted: %s", part);
+ 	LOG_MSG("Save state corrupted! Program in inconsistent state! - %s", part);
+ 	systemmessagebox("Error", MSG_Get("SAVE_CORRUPTED"),"ok","error", 1);
+ }
+@@ -584,6 +590,7 @@
+ std::string loadstate_detail_saved;
+ std::string loadstate_detail_current;
+ bool loadstateconfirm(int ind) {
++    if (getenv("DOSBOX_REF_SOCKET")) return false;
+ 	if (ind<0||ind>4) return false;
+ 	confres=true;
+ 	GUI_Shortcut(23+ind);
+@@ -592,7 +599,8 @@
+ 	return ret;
+ }
+ 
+-void SaveState::load(size_t slot) const { //throw (Error)
++void SaveState::load(size_t slot) const {
++    reference_state_ok = false; //throw (Error)
+ 	//	if (isEmpty(slot)) return;
+ 	bool load_err=false;
+ 	if((MEM_TotalPages()*4096/1024/1024)>1024) {
+@@ -783,6 +791,7 @@
+ 	}
+ 
+ 	if (!dos_kernel_disabled) flagged_restore((char *)save.c_str());
++	reference_state_ok = !load_err;
+ 	if (!load_err) LOG_MSG("[%s]: Loaded. (Slot %d)", getTime().c_str(), (int)slot+1);
+ }
+ 

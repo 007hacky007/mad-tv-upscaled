@@ -1,0 +1,2363 @@
+{
+ "schema_version": 1,
+ "slots": [
+  {
+   "slot": 1,
+   "archive": "SOURCE1.RSC",
+   "size": 770,
+   "kind": "Palette",
+   "language": "none",
+   "loader": "FUN_1d5e_00a0",
+   "note": "256-entry VGA DAC table (2-byte header + 768); identical to 299"
+  },
+  {
+   "slot": 2,
+   "archive": "SOURCE1.RSC",
+   "size": 509,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 30
+  },
+  {
+   "slot": 3,
+   "archive": "SOURCE1.RSC",
+   "size": 901,
+   "kind": "Font",
+   "language": "none",
+   "loader": "FUN_1d5e_01a1(3) in main -> DS:8386",
+   "note": "118 glyph frames, 8 px high; char -> frame via DS:012E, widths DS:022E",
+   "frames": 118
+  },
+  {
+   "slot": 4,
+   "archive": "SOURCE1.RSC",
+   "size": 160,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 12
+  },
+  {
+   "slot": 5,
+   "archive": "SOURCE1.RSC",
+   "size": 2132,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 2
+  },
+  {
+   "slot": 6,
+   "archive": "SOURCE1.RSC",
+   "size": 2773,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 30
+  },
+  {
+   "slot": 7,
+   "archive": "SOURCE1.RSC",
+   "size": 502,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 17
+  },
+  {
+   "slot": 9,
+   "archive": "SOURCE1.RSC",
+   "size": 2840,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 2
+  },
+  {
+   "slot": 10,
+   "archive": "SOURCE1.RSC",
+   "size": 1424,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 4
+  },
+  {
+   "slot": 11,
+   "archive": "SOURCE1.RSC",
+   "size": 1415,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 19
+  },
+  {
+   "slot": 12,
+   "archive": "SOURCE1.RSC",
+   "size": 1309,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 13,
+   "archive": "SOURCE1.RSC",
+   "size": 599,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 18
+  },
+  {
+   "slot": 14,
+   "archive": "SOURCE1.RSC",
+   "size": 2066,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 2
+  },
+  {
+   "slot": 15,
+   "archive": "SOURCE1.RSC",
+   "size": 1245,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 16
+  },
+  {
+   "slot": 16,
+   "archive": "SOURCE1.RSC",
+   "size": 290,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 3
+  },
+  {
+   "slot": 17,
+   "archive": "SOURCE1.RSC",
+   "size": 772,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 10
+  },
+  {
+   "slot": 18,
+   "archive": "SOURCE1.RSC",
+   "size": 784,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 10
+  },
+  {
+   "slot": 19,
+   "archive": "SOURCE1.RSC",
+   "size": 785,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 10
+  },
+  {
+   "slot": 20,
+   "archive": "SOURCE1.RSC",
+   "size": 780,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 10
+  },
+  {
+   "slot": 21,
+   "archive": "SOURCE1.RSC",
+   "size": 786,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 10
+  },
+  {
+   "slot": 22,
+   "archive": "SOURCE1.RSC",
+   "size": 763,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 10
+  },
+  {
+   "slot": 23,
+   "archive": "SOURCE1.RSC",
+   "size": 873,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 10
+  },
+  {
+   "slot": 24,
+   "archive": "SOURCE1.RSC",
+   "size": 635,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 10
+  },
+  {
+   "slot": 25,
+   "archive": "SOURCE1.RSC",
+   "size": 706,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 8
+  },
+  {
+   "slot": 26,
+   "archive": "SOURCE1.RSC",
+   "size": 706,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 8
+  },
+  {
+   "slot": 27,
+   "archive": "SOURCE1.RSC",
+   "size": 706,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 8
+  },
+  {
+   "slot": 28,
+   "archive": "SOURCE1.RSC",
+   "size": 1196,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 6
+  },
+  {
+   "slot": 29,
+   "archive": "SOURCE1.RSC",
+   "size": 380,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 2
+  },
+  {
+   "slot": 30,
+   "archive": "SOURCE1.RSC",
+   "size": 2670,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 4
+  },
+  {
+   "slot": 41,
+   "archive": "SOURCE1.RSC",
+   "size": 40,
+   "kind": "Text",
+   "language": "both",
+   "loader": "FUN_1d5e_00fa(0x29)",
+   "note": "language prompt strings (D)eutsch / (E)nglish"
+  },
+  {
+   "slot": 42,
+   "archive": "SOURCE1.RSC",
+   "size": 870,
+   "kind": "Text",
+   "language": "de",
+   "loader": "language table DS:055E",
+   "note": "",
+   "pair": 246
+  },
+  {
+   "slot": 43,
+   "archive": "SOURCE1.RSC",
+   "size": 37605,
+   "kind": "Table",
+   "language": "none",
+   "loader": "unknown (Task 12)",
+   "note": "18-byte records; same layout as 210, different values"
+  },
+  {
+   "slot": 44,
+   "archive": "SOURCE1.RSC",
+   "size": 3599,
+   "kind": "Text",
+   "language": "de",
+   "loader": "language table DS:055E",
+   "note": "",
+   "pair": 247
+  },
+  {
+   "slot": 45,
+   "archive": "SOURCE1.RSC",
+   "size": 4877,
+   "kind": "Text",
+   "language": "de",
+   "loader": "language table DS:055E",
+   "note": "",
+   "pair": 250
+  },
+  {
+   "slot": 46,
+   "archive": "SOURCE1.RSC",
+   "size": 2406,
+   "kind": "Text",
+   "language": "de",
+   "loader": "language table DS:055E",
+   "note": "",
+   "pair": 249
+  },
+  {
+   "slot": 47,
+   "archive": "SOURCE1.RSC",
+   "size": 34733,
+   "kind": "Text",
+   "language": "de",
+   "loader": "language table DS:055E",
+   "note": "",
+   "pair": 251
+  },
+  {
+   "slot": 48,
+   "archive": "SOURCE1.RSC",
+   "size": 714,
+   "kind": "Table",
+   "language": "none",
+   "loader": "unknown (Task 12)",
+   "note": "714 bytes, mostly zero"
+  },
+  {
+   "slot": 49,
+   "archive": "SOURCE1.RSC",
+   "size": 13212,
+   "kind": "Text",
+   "language": "de",
+   "loader": "language table DS:055E",
+   "note": "",
+   "pair": 248
+  },
+  {
+   "slot": 51,
+   "archive": "SOURCE1.RSC",
+   "size": 4403,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 52,
+   "archive": "SOURCE1.RSC",
+   "size": 2790,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 53,
+   "archive": "SOURCE1.RSC",
+   "size": 4256,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 54,
+   "archive": "SOURCE1.RSC",
+   "size": 3969,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 55,
+   "archive": "SOURCE1.RSC",
+   "size": 2351,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 56,
+   "archive": "SOURCE1.RSC",
+   "size": 3847,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 58,
+   "archive": "SOURCE1.RSC",
+   "size": 3029,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 59,
+   "archive": "SOURCE1.RSC",
+   "size": 4824,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 60,
+   "archive": "SOURCE1.RSC",
+   "size": 3984,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 61,
+   "archive": "SOURCE1.RSC",
+   "size": 3046,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 62,
+   "archive": "SOURCE1.RSC",
+   "size": 2974,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 63,
+   "archive": "SOURCE1.RSC",
+   "size": 2781,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 64,
+   "archive": "SOURCE1.RSC",
+   "size": 2785,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 65,
+   "archive": "SOURCE1.RSC",
+   "size": 2753,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 66,
+   "archive": "SOURCE1.RSC",
+   "size": 3142,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 67,
+   "archive": "SOURCE1.RSC",
+   "size": 3370,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 68,
+   "archive": "SOURCE1.RSC",
+   "size": 4966,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 69,
+   "archive": "SOURCE1.RSC",
+   "size": 3949,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 70,
+   "archive": "SOURCE1.RSC",
+   "size": 4197,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 71,
+   "archive": "SOURCE1.RSC",
+   "size": 3904,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 72,
+   "archive": "SOURCE1.RSC",
+   "size": 4567,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 73,
+   "archive": "SOURCE1.RSC",
+   "size": 4696,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 74,
+   "archive": "SOURCE1.RSC",
+   "size": 4817,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 75,
+   "archive": "SOURCE1.RSC",
+   "size": 3087,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 76,
+   "archive": "SOURCE1.RSC",
+   "size": 4503,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 77,
+   "archive": "SOURCE1.RSC",
+   "size": 3711,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 78,
+   "archive": "SOURCE2.RSC",
+   "size": 5566,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 79,
+   "archive": "SOURCE2.RSC",
+   "size": 4888,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 80,
+   "archive": "SOURCE2.RSC",
+   "size": 2590,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 81,
+   "archive": "SOURCE2.RSC",
+   "size": 3299,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 82,
+   "archive": "SOURCE2.RSC",
+   "size": 1858,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 83,
+   "archive": "SOURCE2.RSC",
+   "size": 1762,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 84,
+   "archive": "SOURCE2.RSC",
+   "size": 1065,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 85,
+   "archive": "SOURCE2.RSC",
+   "size": 1743,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 86,
+   "archive": "SOURCE2.RSC",
+   "size": 2590,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 87,
+   "archive": "SOURCE2.RSC",
+   "size": 2842,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 88,
+   "archive": "SOURCE2.RSC",
+   "size": 1482,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 89,
+   "archive": "SOURCE2.RSC",
+   "size": 2724,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 90,
+   "archive": "SOURCE2.RSC",
+   "size": 1308,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 91,
+   "archive": "SOURCE2.RSC",
+   "size": 2446,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 92,
+   "archive": "SOURCE2.RSC",
+   "size": 2666,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 93,
+   "archive": "SOURCE2.RSC",
+   "size": 1341,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 94,
+   "archive": "SOURCE2.RSC",
+   "size": 1717,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 95,
+   "archive": "SOURCE1.RSC",
+   "size": 3599,
+   "kind": "Driver",
+   "language": "none",
+   "loader": "FUN_485d_029a(0x5f) in FUN_45f8_0003",
+   "note": "PALLADIX-PSM V1.1 PC-Beeper driver"
+  },
+  {
+   "slot": 96,
+   "archive": "SOURCE2.RSC",
+   "size": 2998,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 97,
+   "archive": "SOURCE2.RSC",
+   "size": 4648,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 98,
+   "archive": "SOURCE1.RSC",
+   "size": 5477,
+   "kind": "Driver",
+   "language": "none",
+   "loader": "FUN_485d_029a(0x62) in FUN_45f8_0003",
+   "note": "PALLADIX-PSM V1.3 AdLib driver"
+  },
+  {
+   "slot": 99,
+   "archive": "SOURCE1.RSC",
+   "size": 333,
+   "kind": "Driver",
+   "language": "none",
+   "loader": "FUN_485d_029a(99) in FUN_45f8_0003",
+   "note": "PALLADIX-PSMDETECT: AdLib / PC-Beeper detection"
+  },
+  {
+   "slot": 101,
+   "archive": "SOURCE1.RSC",
+   "size": 5121,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 102,
+   "archive": "SOURCE1.RSC",
+   "size": 3971,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 103,
+   "archive": "SOURCE1.RSC",
+   "size": 3429,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 104,
+   "archive": "SOURCE1.RSC",
+   "size": 4052,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 105,
+   "archive": "SOURCE1.RSC",
+   "size": 3691,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 106,
+   "archive": "SOURCE1.RSC",
+   "size": 4354,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 108,
+   "archive": "SOURCE1.RSC",
+   "size": 3509,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 109,
+   "archive": "SOURCE1.RSC",
+   "size": 4331,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 110,
+   "archive": "SOURCE1.RSC",
+   "size": 4004,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 111,
+   "archive": "SOURCE1.RSC",
+   "size": 3729,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 112,
+   "archive": "SOURCE1.RSC",
+   "size": 3023,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 113,
+   "archive": "SOURCE1.RSC",
+   "size": 2777,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 114,
+   "archive": "SOURCE1.RSC",
+   "size": 2774,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 115,
+   "archive": "SOURCE1.RSC",
+   "size": 2724,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 116,
+   "archive": "SOURCE1.RSC",
+   "size": 3223,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 117,
+   "archive": "SOURCE1.RSC",
+   "size": 3966,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 118,
+   "archive": "SOURCE1.RSC",
+   "size": 4598,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 119,
+   "archive": "SOURCE1.RSC",
+   "size": 4478,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 120,
+   "archive": "SOURCE1.RSC",
+   "size": 3533,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 121,
+   "archive": "SOURCE1.RSC",
+   "size": 4401,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 122,
+   "archive": "SOURCE1.RSC",
+   "size": 4613,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 123,
+   "archive": "SOURCE1.RSC",
+   "size": 4654,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 124,
+   "archive": "SOURCE1.RSC",
+   "size": 4258,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 125,
+   "archive": "SOURCE1.RSC",
+   "size": 3079,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 126,
+   "archive": "SOURCE1.RSC",
+   "size": 3541,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 127,
+   "archive": "SOURCE1.RSC",
+   "size": 3646,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 147,
+   "archive": "SOURCE1.RSC",
+   "size": 701,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 148,
+   "archive": "SOURCE1.RSC",
+   "size": 1011,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 149,
+   "archive": "SOURCE1.RSC",
+   "size": 4018,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 150,
+   "archive": "SOURCE1.RSC",
+   "size": 1284,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 88
+  },
+  {
+   "slot": 151,
+   "archive": "SOURCE1.RSC",
+   "size": 2332,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 10
+  },
+  {
+   "slot": 152,
+   "archive": "SOURCE1.RSC",
+   "size": 789,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 118
+  },
+  {
+   "slot": 153,
+   "archive": "SOURCE1.RSC",
+   "size": 2386,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 23
+  },
+  {
+   "slot": 154,
+   "archive": "SOURCE1.RSC",
+   "size": 207,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 10
+  },
+  {
+   "slot": 155,
+   "archive": "SOURCE1.RSC",
+   "size": 1565,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 11
+  },
+  {
+   "slot": 156,
+   "archive": "SOURCE1.RSC",
+   "size": 236,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 2
+  },
+  {
+   "slot": 157,
+   "archive": "SOURCE1.RSC",
+   "size": 296,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 3
+  },
+  {
+   "slot": 158,
+   "archive": "SOURCE1.RSC",
+   "size": 141,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 12
+  },
+  {
+   "slot": 159,
+   "archive": "SOURCE1.RSC",
+   "size": 1376,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 10
+  },
+  {
+   "slot": 160,
+   "archive": "SOURCE1.RSC",
+   "size": 818,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 15
+  },
+  {
+   "slot": 161,
+   "archive": "SOURCE1.RSC",
+   "size": 568,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 7
+  },
+  {
+   "slot": 162,
+   "archive": "SOURCE1.RSC",
+   "size": 849,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 12
+  },
+  {
+   "slot": 163,
+   "archive": "SOURCE1.RSC",
+   "size": 3077,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 164,
+   "archive": "SOURCE1.RSC",
+   "size": 4578,
+   "kind": "Table",
+   "language": "none",
+   "loader": "FUN_1d5e_00a0(0xa4) in main -> DS:7C7E",
+   "note": "1-bit mask, 21 words x 109 rows, indexed (y*21 + x/8); matches the 160x109 US map (slot 70): broadcast coverage"
+  },
+  {
+   "slot": 165,
+   "archive": "SOURCE1.RSC",
+   "size": 615,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 6
+  },
+  {
+   "slot": 166,
+   "archive": "SOURCE1.RSC",
+   "size": 3741,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 25
+  },
+  {
+   "slot": 167,
+   "archive": "SOURCE1.RSC",
+   "size": 3090,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 15
+  },
+  {
+   "slot": 168,
+   "archive": "SOURCE1.RSC",
+   "size": 5030,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 26
+  },
+  {
+   "slot": 169,
+   "archive": "SOURCE1.RSC",
+   "size": 2427,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 20
+  },
+  {
+   "slot": 170,
+   "archive": "SOURCE1.RSC",
+   "size": 794,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 8
+  },
+  {
+   "slot": 171,
+   "archive": "SOURCE1.RSC",
+   "size": 336,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 3
+  },
+  {
+   "slot": 172,
+   "archive": "SOURCE1.RSC",
+   "size": 5427,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 25
+  },
+  {
+   "slot": 174,
+   "archive": "SOURCE1.RSC",
+   "size": 927,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 5
+  },
+  {
+   "slot": 175,
+   "archive": "SOURCE1.RSC",
+   "size": 1949,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 43
+  },
+  {
+   "slot": 176,
+   "archive": "SOURCE1.RSC",
+   "size": 1212,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 16
+  },
+  {
+   "slot": 177,
+   "archive": "SOURCE1.RSC",
+   "size": 1230,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 15
+  },
+  {
+   "slot": 178,
+   "archive": "SOURCE1.RSC",
+   "size": 1055,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 10
+  },
+  {
+   "slot": 179,
+   "archive": "SOURCE1.RSC",
+   "size": 890,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 19
+  },
+  {
+   "slot": 180,
+   "archive": "SOURCE1.RSC",
+   "size": 1120,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 14
+  },
+  {
+   "slot": 181,
+   "archive": "SOURCE1.RSC",
+   "size": 4892,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 26
+  },
+  {
+   "slot": 182,
+   "archive": "SOURCE1.RSC",
+   "size": 930,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 9
+  },
+  {
+   "slot": 183,
+   "archive": "SOURCE1.RSC",
+   "size": 1509,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 185,
+   "archive": "SOURCE1.RSC",
+   "size": 1706,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 27
+  },
+  {
+   "slot": 186,
+   "archive": "SOURCE1.RSC",
+   "size": 226,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 7
+  },
+  {
+   "slot": 187,
+   "archive": "SOURCE1.RSC",
+   "size": 2674,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 11
+  },
+  {
+   "slot": 188,
+   "archive": "SOURCE1.RSC",
+   "size": 998,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 189,
+   "archive": "SOURCE1.RSC",
+   "size": 949,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 190,
+   "archive": "SOURCE1.RSC",
+   "size": 1157,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 191,
+   "archive": "SOURCE1.RSC",
+   "size": 986,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 192,
+   "archive": "SOURCE1.RSC",
+   "size": 4159,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 17
+  },
+  {
+   "slot": 193,
+   "archive": "SOURCE1.RSC",
+   "size": 310,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 4
+  },
+  {
+   "slot": 194,
+   "archive": "SOURCE1.RSC",
+   "size": 1716,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 2
+  },
+  {
+   "slot": 195,
+   "archive": "SOURCE1.RSC",
+   "size": 1730,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 2
+  },
+  {
+   "slot": 196,
+   "archive": "SOURCE1.RSC",
+   "size": 1794,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 2
+  },
+  {
+   "slot": 197,
+   "archive": "SOURCE1.RSC",
+   "size": 3717,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 12
+  },
+  {
+   "slot": 198,
+   "archive": "SOURCE1.RSC",
+   "size": 1894,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 2
+  },
+  {
+   "slot": 199,
+   "archive": "SOURCE1.RSC",
+   "size": 13689,
+   "kind": "Text",
+   "language": "de",
+   "loader": "language table DS:055E",
+   "note": "",
+   "pair": 253
+  },
+  {
+   "slot": 201,
+   "archive": "SOURCE1.RSC",
+   "size": 4623,
+   "kind": "Table",
+   "language": "none",
+   "loader": "FUN_485d_029a(0xc9) in main",
+   "note": "loaded into DS buffer 24A9"
+  },
+  {
+   "slot": 202,
+   "archive": "SOURCE1.RSC",
+   "size": 2907,
+   "kind": "Table",
+   "language": "none",
+   "loader": "FUN_485d_029a(0xca) in main",
+   "note": "loaded into DS buffer 2646"
+  },
+  {
+   "slot": 203,
+   "archive": "SOURCE1.RSC",
+   "size": 22185,
+   "kind": "Table",
+   "language": "none",
+   "loader": "FUN_485d_029a(0xcb) in main",
+   "note": "loaded into DS buffer 715C"
+  },
+  {
+   "slot": 204,
+   "archive": "SOURCE1.RSC",
+   "size": 1224,
+   "kind": "Table",
+   "language": "none",
+   "loader": "FUN_485d_029a(0xcc)",
+   "note": "loaded into DS:3F4F"
+  },
+  {
+   "slot": 205,
+   "archive": "SOURCE1.RSC",
+   "size": 4010,
+   "kind": "Table",
+   "language": "none",
+   "loader": "FUN_485d_029a(0xcd)",
+   "note": "loaded into DS:2731"
+  },
+  {
+   "slot": 206,
+   "archive": "SOURCE1.RSC",
+   "size": 2856,
+   "kind": "Table",
+   "language": "none",
+   "loader": "unknown (Task 12)",
+   "note": ""
+  },
+  {
+   "slot": 207,
+   "archive": "SOURCE1.RSC",
+   "size": 17094,
+   "kind": "Text",
+   "language": "de",
+   "loader": "language table DS:055E",
+   "note": "",
+   "pair": 252
+  },
+  {
+   "slot": 208,
+   "archive": "SOURCE1.RSC",
+   "size": 6084,
+   "kind": "Table",
+   "language": "none",
+   "loader": "FUN_485d_029a(0xd0)",
+   "note": "loaded into DS:8FB0"
+  },
+  {
+   "slot": 209,
+   "archive": "SOURCE1.RSC",
+   "size": 400,
+   "kind": "Table",
+   "language": "none",
+   "loader": "FUN_485d_0336 / FUN_485d_04f3 (0xd1, 400)",
+   "note": "written back into SOURCE1.RSC by the game; the port keeps it in the user directory"
+  },
+  {
+   "slot": 210,
+   "archive": "SOURCE1.RSC",
+   "size": 37605,
+   "kind": "Table",
+   "language": "none",
+   "loader": "unknown (Task 12)",
+   "note": "18-byte records; same layout as 43, different values"
+  },
+  {
+   "slot": 220,
+   "archive": "SOURCE1.RSC",
+   "size": 778,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 221,
+   "archive": "SOURCE1.RSC",
+   "size": 1131,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 222,
+   "archive": "SOURCE1.RSC",
+   "size": 1107,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 223,
+   "archive": "SOURCE1.RSC",
+   "size": 1223,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 224,
+   "archive": "SOURCE1.RSC",
+   "size": 1259,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 225,
+   "archive": "SOURCE1.RSC",
+   "size": 1294,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 226,
+   "archive": "SOURCE1.RSC",
+   "size": 1245,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 227,
+   "archive": "SOURCE1.RSC",
+   "size": 1282,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 228,
+   "archive": "SOURCE1.RSC",
+   "size": 1402,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 229,
+   "archive": "SOURCE1.RSC",
+   "size": 1343,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 230,
+   "archive": "SOURCE1.RSC",
+   "size": 1195,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 231,
+   "archive": "SOURCE1.RSC",
+   "size": 1280,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 232,
+   "archive": "SOURCE1.RSC",
+   "size": 1266,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 233,
+   "archive": "SOURCE1.RSC",
+   "size": 1080,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 234,
+   "archive": "SOURCE1.RSC",
+   "size": 1228,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 235,
+   "archive": "SOURCE1.RSC",
+   "size": 1345,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 236,
+   "archive": "SOURCE1.RSC",
+   "size": 1303,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 237,
+   "archive": "SOURCE1.RSC",
+   "size": 1227,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 238,
+   "archive": "SOURCE1.RSC",
+   "size": 1234,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 3
+  },
+  {
+   "slot": 239,
+   "archive": "SOURCE1.RSC",
+   "size": 2880,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 240,
+   "archive": "SOURCE1.RSC",
+   "size": 4642,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 6
+  },
+  {
+   "slot": 246,
+   "archive": "SOURCE1.RSC",
+   "size": 870,
+   "kind": "Text",
+   "language": "en",
+   "loader": "language table DS:055E",
+   "note": "",
+   "pair": 42
+  },
+  {
+   "slot": 247,
+   "archive": "SOURCE1.RSC",
+   "size": 3623,
+   "kind": "Text",
+   "language": "en",
+   "loader": "language table DS:055E",
+   "note": "",
+   "pair": 44
+  },
+  {
+   "slot": 248,
+   "archive": "SOURCE1.RSC",
+   "size": 12942,
+   "kind": "Text",
+   "language": "en",
+   "loader": "language table DS:055E",
+   "note": "",
+   "pair": 49
+  },
+  {
+   "slot": 249,
+   "archive": "SOURCE1.RSC",
+   "size": 2419,
+   "kind": "Text",
+   "language": "en",
+   "loader": "language table DS:055E",
+   "note": "",
+   "pair": 46
+  },
+  {
+   "slot": 250,
+   "archive": "SOURCE1.RSC",
+   "size": 4700,
+   "kind": "Text",
+   "language": "en",
+   "loader": "language table DS:055E",
+   "note": "",
+   "pair": 45
+  },
+  {
+   "slot": 251,
+   "archive": "SOURCE1.RSC",
+   "size": 32100,
+   "kind": "Text",
+   "language": "en",
+   "loader": "language table DS:055E",
+   "note": "",
+   "pair": 47
+  },
+  {
+   "slot": 252,
+   "archive": "SOURCE1.RSC",
+   "size": 16389,
+   "kind": "Text",
+   "language": "en",
+   "loader": "language table DS:055E",
+   "note": "",
+   "pair": 207
+  },
+  {
+   "slot": 253,
+   "archive": "SOURCE1.RSC",
+   "size": 12723,
+   "kind": "Text",
+   "language": "en",
+   "loader": "language table DS:055E",
+   "note": "",
+   "pair": 199
+  },
+  {
+   "slot": 254,
+   "archive": "SOURCE2.RSC",
+   "size": 1593,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 255,
+   "archive": "SOURCE2.RSC",
+   "size": 1655,
+   "kind": "Music",
+   "language": "none",
+   "loader": "FUN_45f8_024c (LZW, decoder 0x46F49) via FUN_45f8_037c event table",
+   "note": ""
+  },
+  {
+   "slot": 299,
+   "archive": "SOURCE1.RSC",
+   "size": 770,
+   "kind": "Palette",
+   "language": "none",
+   "loader": "FUN_1d5e_00a0 (main)",
+   "note": "same bytes as slot 1; set by FUN_4743_0001"
+  },
+  {
+   "slot": 300,
+   "archive": "SOURCE2.RSC",
+   "size": 3468,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 301,
+   "archive": "SOURCE2.RSC",
+   "size": 6850,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 302,
+   "archive": "SOURCE2.RSC",
+   "size": 22868,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 303,
+   "archive": "SOURCE2.RSC",
+   "size": 22856,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 304,
+   "archive": "SOURCE2.RSC",
+   "size": 22236,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 305,
+   "archive": "SOURCE2.RSC",
+   "size": 6710,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 306,
+   "archive": "SOURCE2.RSC",
+   "size": 3502,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 307,
+   "archive": "SOURCE2.RSC",
+   "size": 4079,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 308,
+   "archive": "SOURCE2.RSC",
+   "size": 3588,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 309,
+   "archive": "SOURCE2.RSC",
+   "size": 5005,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 310,
+   "archive": "SOURCE2.RSC",
+   "size": 4671,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 311,
+   "archive": "SOURCE2.RSC",
+   "size": 16676,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 312,
+   "archive": "SOURCE2.RSC",
+   "size": 12354,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 314,
+   "archive": "SOURCE2.RSC",
+   "size": 5604,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 315,
+   "archive": "SOURCE2.RSC",
+   "size": 728,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 316,
+   "archive": "SOURCE2.RSC",
+   "size": 4994,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 317,
+   "archive": "SOURCE2.RSC",
+   "size": 1931,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 318,
+   "archive": "SOURCE2.RSC",
+   "size": 5594,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 319,
+   "archive": "SOURCE2.RSC",
+   "size": 13828,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 320,
+   "archive": "SOURCE2.RSC",
+   "size": 4833,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 321,
+   "archive": "SOURCE2.RSC",
+   "size": 4361,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 322,
+   "archive": "SOURCE2.RSC",
+   "size": 4116,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 323,
+   "archive": "SOURCE2.RSC",
+   "size": 6292,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 324,
+   "archive": "SOURCE2.RSC",
+   "size": 980,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 325,
+   "archive": "SOURCE2.RSC",
+   "size": 5080,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 326,
+   "archive": "SOURCE2.RSC",
+   "size": 731,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 327,
+   "archive": "SOURCE2.RSC",
+   "size": 4298,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 328,
+   "archive": "SOURCE2.RSC",
+   "size": 7111,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 329,
+   "archive": "SOURCE2.RSC",
+   "size": 4654,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 330,
+   "archive": "SOURCE2.RSC",
+   "size": 12444,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 331,
+   "archive": "SOURCE2.RSC",
+   "size": 11988,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 332,
+   "archive": "SOURCE2.RSC",
+   "size": 4507,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 333,
+   "archive": "SOURCE2.RSC",
+   "size": 4707,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 334,
+   "archive": "SOURCE2.RSC",
+   "size": 12710,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 335,
+   "archive": "SOURCE2.RSC",
+   "size": 6606,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  },
+  {
+   "slot": 336,
+   "archive": "SOURCE1.RSC",
+   "size": 5454,
+   "kind": "Image",
+   "language": "none",
+   "loader": "FUN_1d5e_011b / FUN_1d5e_01a1 (packed image, decoder 0x47FEC)",
+   "note": "",
+   "frames": 1
+  },
+  {
+   "slot": 337,
+   "archive": "SOURCE1.RSC",
+   "size": 7623,
+   "kind": "Animation",
+   "language": "none",
+   "loader": "",
+   "note": ""
+  }
+ ]
+}

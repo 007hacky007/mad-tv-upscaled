@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mad TV state dump",
+  "description": "One checkpoint. Field names come from analysis/evidence/state-layout.json; the native game writes the same names.",
+  "type": "object",
+  "required": ["tick"],
+  "properties": {"tick": {"type": "integer", "minimum": 0}},
+  "additionalProperties": {"type": ["integer", "string", "array"]}
+}

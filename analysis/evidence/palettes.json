@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "video_mode": "VGA mode 13h, 320x200, 256 colours, chunky (FUN_473f_0009 at 0x473F9: INT 10h AX=0013h after saving the old mode)",
+  "dac_writes": [
+    {"code": "0x47431 FUN_4743_0001", "method": "INT 10h AX=1012h, BX=0, CX=first word of the table, ES:DX=table+2", "callers": ["main 0x10545 with slot 299 (before the language prompt)", "main 0x10545 with slot 1 (after the title)"]}
+  ],
+  "palettes": [
+    {"slot": 1, "entries": 256, "non_black": "1-30 and 255", "used_by": "all game screens"},
+    {"slot": 299, "same_as": 1}
+  ],
+  "effects": "none found: no other INT 10h AX=1010h/1012h calls, no DAC port (0x3C8/0x3C9) writes, no colour cycling in MTV.EXE",
+  "transparent_index": {"value": 0, "evidence": "masked blitters 0x477AC, 0x47865, 0x4795C, 0x47A21 skip a pixel when TEST AL,AL / TEST AH,AH is zero"},
+  "stray_indices": "slots 30 (frames 0, 2, 3) and 70 (frame 0) contain 200 pixels with indices 47, 131, 208-252; their DAC entries are black (255 is white), so they show as black in the original too"
+}

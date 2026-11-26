@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "scale": 6,
+  "inputs": [
+    "slot 51, 62 rooms",
+    "slot 305 street backdrop",
+    "slot 17 walking character",
+    "slot 181 large sprite",
+    "slot 12, 9 UI panels",
+    "slot 2 cursor",
+    "slot 3 font sheet",
+    "a full original screen (reference run frame at tick 2000)"
+  ],
+  "runner": {
+    "path": "tools/upscalers/realesrgan-20220424/realesrgan-ncnn-vulkan",
+    "sha256": "c1c35d92079085de96b9d547fd7e4464bc8a2e9ccf28d7b8c712d72ade91b7cc",
+    "licence": "MIT (runner), BSD-3-Clause (Real-ESRGAN, ncnn)"
+  },
+  "models": {
+    "realesr-animevideov3 (x2/x3/x4 share one weight file)": "548a36f9c3f4ab8da56cd3b13badf23968bee207b396dad14d04b830e5f2ab2d",
+    "realesrgan-x4plus-anime": "fe01c269cfd10cdef8e018ab66ebe750cf79c7af4d1f9c16c737e1295229bacc",
+    "realesrgan-x4plus": "713ee713b0353afaa27976f0563a64a5043bd70b9bd8936c2e26e25ebcdbcddf"
+  },
+  "methods": [
+    "nearest 6x",
+    "animevideov3 x3 then x2",
+    "nearest 2x then animevideov3 x3",
+    "x4plus-anime x4 then Lanczos 1.5x",
+    "x4plus x4 then Lanczos 1.5x"
+  ],
+  "transparency": "transparent pixels are filled from opaque neighbours before upscaling; the alpha mask is upscaled by the same method and thresholded at 50%",
+  "observations": {
+    "backgrounds": "animevideov3 x3+x2 cleanest (flat colours, smooth outlines); x4plus-anime crisper with added texture; x4plus noisy",
+    "font": "4x8 glyphs: nearest and animevideov3 readable; x4plus models break strokes",
+    "page": "work/pilot/index.html (local only, derived from game art)"
+  },
+  "user_choice": {
+    "date": "2026-11-25",
+    "art": "nearest 2x then realesr-animevideov3 x3",
+    "font": "same method as the art",
+    "scale": 6,
+    "lock": {
+      "method": {
+        "pre": "nearest x2",
+        "model": "realesr-animevideov3",
+        "model_scale": 3,
+        "mask": "same method, threshold 128"
+      },
+      "scale": 6,
+      "runner_sha256": "c1c35d92079085de96b9d547fd7e4464bc8a2e9ccf28d7b8c712d72ade91b7cc",
+      "model_sha256": "548a36f9c3f4ab8da56cd3b13badf23968bee207b396dad14d04b830e5f2ab2d",
+      "param_sha256": "d1a5755008791d09b57e3425fc9dd0bd26b00fdf79c606210bc0e693f8230881"
+    }
+  }
+}

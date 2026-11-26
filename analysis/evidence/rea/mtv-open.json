@@ -1,0 +1,27 @@
+{
+  "result": {
+    "_meta": {
+      "provenance": {
+        "untrusted_content": true,
+        "source": "analysis_target"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"result\":{\"path\":\"work/unpacked/MTV.EXE\",\"sha256\":\"656e44191a6fa1bec77ee7ad26d94d05ff07c7c54980914564aa2d8803f841ca\",\"kind\":\"executable\",\"format\":\"dos-mz\",\"architecture\":\"x86\"}}"
+      }
+    ],
+    "structuredContent": {
+      "result": {
+        "path": "work/unpacked/MTV.EXE",
+        "sha256": "656e44191a6fa1bec77ee7ad26d94d05ff07c7c54980914564aa2d8803f841ca",
+        "kind": "executable",
+        "format": "dos-mz",
+        "architecture": "x86"
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}
